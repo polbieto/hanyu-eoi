@@ -2,6 +2,7 @@
   "name": "apuntes-chino",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@12.14.0",
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
