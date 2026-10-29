@@ -1,9 +1,9 @@
 ---
-title: "Tema 1.3: Preguntar por la Nacionalidad (I) — 你是哪国人？"
+title: "Lección 1.3: Preguntar por la Nacionalidad (I) — 你是哪国人？"
 description: "Cómo preguntar y confirmar la nacionalidad con 哪国人 y 吗, negación con 不是, primeros países europeos y origen de los caracteres 国 y 哪."
 ---
 
-# Tema 1.3: Preguntar por la Nacionalidad (I) — `你是哪国人？`
+# Lección 1.3: Preguntar por la Nacionalidad (I) — `你是哪国人？`
 
 ## 📝 Vocabulario Clave
 

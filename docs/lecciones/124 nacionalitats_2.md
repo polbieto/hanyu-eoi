@@ -1,9 +1,9 @@
 ---
-title: "Tema 1.5: Nacionalidades (II) y Ciudad de Origen (你是哪儿人？)"
+title: "Lección 1.5: Nacionalidades (II) y Ciudad de Origen (你是哪儿人？)"
 description: "Ampliación de países de América y Asia, gentilicios de ciudad con 人 y contraste entre 你是哪国人？ (país) y 你是哪儿人？ (ciudad o región)."
 ---
 
-# Tema 1.5: Nacionalidades (II) y Ciudad de Origen (`你是哪儿人？`)
+# Lección 1.5: Nacionalidades (II) y Ciudad de Origen (`你是哪儿人？`)
 
 ## 📝 Vocabulario Clave
 

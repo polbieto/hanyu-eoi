@@ -1,9 +1,9 @@
 ---
-title: "Lección 3: Pinyin (III), Pronombres, 呢/也/都 y Estructura V不V"
+title: "Lección 0.3: Pinyin (III), Pronombres, 呢/也/都 y Estructura V不V"
 description: "Finales nasales (-n vs. -ng), plural de pronombres con 们, adverbios de grado, preguntas recíprocas con 呢, uso de 也/都 y preguntas afirmativo-negativas."
 ---
 
-# Lección 3: Pinyin (III), Pronombres, `呢` / `也` / `都` y Estructura `V不V`
+# Lección 0.3: Pinyin (III), Pronombres, `呢` / `也` / `都` y Estructura `V不V`
 
 ## 📝 Vocabulario Clave
 

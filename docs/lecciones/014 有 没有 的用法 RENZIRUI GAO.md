@@ -1,9 +1,9 @@
 ---
-title: "Lección 4: Pinyin (IV), Verbo 有/没有 y Clasificador 个"
+title: "Lección 0.4: Pinyin (IV), Verbo 有/没有 y Clasificador 个"
 description: "Iniciales palatales j/q/x, reglas ortográficas de i/u/ü e -iu, posesión y existencia con 有 y su negación exclusiva 没有, clasificador 个 y números 6–7."
 ---
 
-# Lección 4: Pinyin (IV), Verbo `有` / `没有` y Clasificador `个`
+# Lección 0.4: Pinyin (IV), Verbo `有` / `没有` y Clasificador `个`
 
 ## 📝 Vocabulario Clave
 

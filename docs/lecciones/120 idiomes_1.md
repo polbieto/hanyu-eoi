@@ -1,9 +1,9 @@
 ---
-title: "Tema 1.4: Países (国), Nacionalidades (人) e Idiomas (语 vs. 文)"
+title: "Lección 1.4: Países (国), Nacionalidades (人) e Idiomas (语 vs. 文)"
 description: "Sistema completo para formar gentilicios y nombres de idiomas hablados (-语) y escritos (-文), y preguntas con 学习, 说 y 认识."
 ---
 
-# Tema 1.4: Países (`国`), Nacionalidades (`人`) e Idiomas (`语` vs. `文`)
+# Lección 1.4: Países (`国`), Nacionalidades (`人`) e Idiomas (`语` vs. `文`)
 
 ## 📝 Vocabulario Clave
 

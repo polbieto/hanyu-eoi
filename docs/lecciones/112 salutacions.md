@@ -1,9 +1,9 @@
 ---
-title: "Tema 1.1: Saludos según la Hora del Día y Orientaciones (上 / 中 / 下)"
+title: "Lección 1.1: Saludos según la Hora del Día y Orientaciones (上 / 中 / 下)"
 description: "Las cinco franjas del día (早上, 上午, 中午, 下午, 晚上), las raíces espaciales y temporales 上/中/下 y los saludos horarios con 好."
 ---
 
-# Tema 1.1: Saludos según la Hora del Día y Orientaciones (`上` / `中` / `下`)
+# Lección 1.1: Saludos según la Hora del Día y Orientaciones (`上` / `中` / `下`)
 
 ## 📝 Vocabulario Clave
 

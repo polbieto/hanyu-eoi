@@ -1,9 +1,9 @@
 ---
-title: "Tema 1.2: Conozcámonos un Poco (Autopresentación y Modificadores Nominales)"
+title: "Lección 1.2: Conozcámonos un Poco (Autopresentación y Modificadores Nominales)"
 description: "Presentarse en chino (自我介绍), sustantivos como modificador directo sin 的 y expresiones habituales del aula (课堂常用语)."
 ---
 
-# Tema 1.2: Conozcámonos un Poco (`我们认识一下`)
+# Lección 1.2: Conozcámonos un Poco (`我们认识一下`)
 
 ## 📝 Vocabulario Clave
 
