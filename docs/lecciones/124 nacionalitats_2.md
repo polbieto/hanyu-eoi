@@ -1,6 +1,6 @@
 ---
 title: "Lección 1.5: Nacionalidades (II) y Ciudad de Origen (你是哪儿人？)"
-description: "Ampliación de países de América y Asia, gentilicios de ciudad con 人 y contraste entre 你是哪国人？ (país) y 你是哪儿人？ (ciudad o región)."
+description: "Ampliación de países y ciudades con 人, contraste 你是哪国人？ vs. 你是哪儿人？, y notas de clase (27 oct.) con 会, 姓 y repaso de 什么 y 哪."
 ---
 
 # Lección 1.5: Nacionalidades (II) y Ciudad de Origen (`你是哪儿人？`)
@@ -118,4 +118,97 @@ El verbo copulativo `是` (*shì*) sirve por igual para identificar profesión (
   1. **Raíz fonética + `国` («país»):** `英国` (*Yīng-guó*, Inglaterra/Reino Unido), `法国` (*Fǎ-guó*, Francia), `美国` (*Měi-guó*, EE. UU., con `美` «bello»), `德国` (*Dé-guó*, Alemania).
   2. **Transliteración fonética completa (sin `国`):** `西班牙` (*Xībānyá*, España), `意大利` (*Yìdàlì*, Italia), `墨西哥` (*Mòxīgē*, México), e igual ocurre con ciudades como `马德里` (*Mǎdélǐ*, con sandhi de 3.er tono en `德里` *délǐ*), `巴塞罗那` (*Bāsàiluónà*) y `罗马` (*Luómǎ*).
   3. **Nombres sinoxénicos compartidos en Asia Oriental:** `中国` (*Zhōngguó*), `日本` (*Rìběn*) y `韩国` (*Hánguó*).
+
+## 🗒️ Notas de Clase (27 de octubre)
+
+En la sesión del **27 de octubre** practicamos oralmente una batería completa de preguntas personales, introduciendo el verbo **`姓`** (*xìng*) y el verbo modal **`会`** (*huì*), además de retomar y contrastar los pronombres interrogativos **`什么`** (*shénme*) y **`哪`** (*nǎ*).
+
+### Vocabulario introducido en la sesión
+
+| Hanzi | Pinyin | Categoría | Significado (ES) | Frase corta de ejemplo |
+| :---: | :---: | :---: | :--- | :--- |
+| **姓** | *xìng* | Verbo / Sust. | Apellidarse / apellido | 你姓什么？ (¿Cómo te apellidas?) |
+| **会** | *huì* | Verbo modal | Saber (habilidad aprendida) | 我会说汉语 (Sé hablar chino) |
+| **不会** | *bù huì* | Verbo neg. | No saber (hacer algo) | 我不会说日语 (No sé hablar japonés) |
+| **语言** | *yǔyán* | Sust. | Idioma / lengua | 你会说什么语言？ (¿Qué idioma sabes hablar?) |
+
+### Frases clave practicadas en clase
+
+| Pregunta (Hanzi) | Pinyin | Significado (ES) | Respuesta modelo |
+| :--- | :--- | :--- | :--- |
+| **你叫什么名字？** | *Nǐ jiào shénme míngzi?* | ¿Cómo te llamas? | 我叫大卫。 (*Wǒ jiào Dàwèi.*) |
+| **你姓什么？** | *Nǐ xìng shénme?* | ¿Cómo te apellidas? | 我姓李。 (*Wǒ xìng Lǐ.*) |
+| **你是哪国人？** | *Nǐ shì nǎ guó rén?* | ¿De qué país eres? | 我是西班牙人。 (*Wǒ shì Xībānyárén.*) |
+| **你会说什么语言？** | *Nǐ huì shuō shénme yǔyán?* | ¿Qué idioma(s) sabes hablar? | 我会说西班牙语和英语。 (*Wǒ huì shuō Xībānyáyǔ hé Yīngyǔ.*) |
+
+### 1. El verbo modal `会` (*huì*): habilidades aprendidas (idiomas)
+
+> **Afirmativa:** [Sujeto] + **会** + 说 + [Idioma]。  
+> **Negativa:** [Sujeto] + **不会** + 说 + [Idioma]。  
+> **Pregunta abierta:** [Sujeto] + **会** + 说 + **什么语言**？
+
+Mientras que en la Lección 1.4 decíamos `我说汉语` (*Wǒ shuō Hànyǔ*, «hablo chino»), anteponer el verbo modal **`会`** (*huì*) indica **competencia o habilidad adquirida mediante estudio o práctica** («*saber* hablar un idioma»). Se niega con **`不会`** (*bù huì*) y en preguntas cerradas con `吗` admite respuesta corta (`会` / `不会`).
+
+- **Hanzi:** 你会说什么语言？——我会说西班牙语、英语和汉语。
+- **Pinyin:** *Nǐ huì shuō shénme yǔyán? — Wǒ huì shuō Xībānyáyǔ, Yīngyǔ hé Hànyǔ.*
+- **Español:** ¿Qué idiomas sabes hablar? — Sé hablar español, inglés y chino.
+
+- **Hanzi:** 你会说韩语吗？——不会，我不会说韩语。
+- **Pinyin:** *Nǐ huì shuō Hányǔ ma? — Bù huì, wǒ bù huì shuō Hányǔ.*
+- **Español:** ¿Sabes hablar coreano? — No, no sé hablar coreano.
+
+### 2. Preguntar el apellido (`姓`) frente al nombre (`叫`)
+
+> **Apellido:** 你**姓**什么？ → 我**姓** + [Apellido]。  
+> **Nombre:** 你**叫**什么名字？ → 我**叫** + [Nombre completo / Nombre de pila]。
+
+En chino **`姓`** (*xìng*) funciona directamente como verbo («apellidarse»), por lo que va seguido solo de `什么` (**sin** `名字`). Recuerda además que en los nombres chinos el **apellido va siempre delante** del nombre de pila (como en `李明河` *Lǐ Mínghé*, visto arriba).
+
+- **Hanzi:** 他姓什么？他叫什么名字？——他姓李，他叫李明河。
+- **Pinyin:** *Tā xìng shénme? Tā jiào shénme míngzi? — Tā xìng Lǐ, tā jiào Lǐ Mínghé.*
+- **Español:** ¿Cómo se apellida él? ¿Cómo se llama? — Se apellida Li; se llama Li Minghe.
+
+### 3. Volviendo a `什么` (*shénme*) y `哪` (*nǎ*): repaso contrastivo
+
+En las cuatro frases practicadas se observa claramente cómo funcionan ambos interrogativos **sin alterar el orden `Sujeto + Verbo + Objeto`** y **sin llevar nunca la partícula `吗`**:
+
+- **`什么`** (*shénme*, «¿qué? / ¿cuál?» — **pregunta abierta**):
+  - **Solo tras el verbo** (sustituye a todo el objeto): `你姓什么？` (*Nǐ xìng shénme?*, lit. «¿Tú te apellidas qué?»).
+  - **Delante de un sustantivo** (especifica la categoría): `你叫什么名字？` (*shénme míngzi*, «¿qué nombre?»), `你会说什么语言？` (*shénme yǔyán*, «¿qué idioma?»).
+- **`哪`** (*nǎ*, «¿cuál / qué [de entre un conjunto]?» — **pregunta selectiva**):
+  - No aparece solo detrás del verbo, sino unido a un sustantivo o clasificador como `国` («país»): `你是哪国人？` (*nǎ guó rén*, «¿persona de qué país?»), o al sufijo locativo `儿` en `你是哪儿人？` (*nǎr rén*, «¿persona de dónde / de qué ciudad?»).
+
+### Diálogo integrador de clase
+
+- **A:** 你好！你姓什么？你叫什么名字？  
+  *Nǐ hǎo! Nǐ xìng shénme? Nǐ jiào shénme míngzi?*  
+  ¡Hola! ¿Cómo te apellidas? ¿Cómo te llamas?  
+- **B:** 我姓李，我叫李明河。你呢？  
+  *Wǒ xìng Lǐ, wǒ jiào Lǐ Mínghé. Nǐ ne?*  
+  Me apellido Li, me llamo Li Minghe. ¿Y tú?  
+- **A:** 我叫大卫。你是哪国人？  
+  *Wǒ jiào Dàwèi. Nǐ shì nǎ guó rén?*  
+  Me llamo David. ¿De qué país eres?  
+- **B:** 我是中国人，我是上海人。你是哪国人？  
+  *Wǒ shì Zhōngguórén, wǒ shì Shànghǎirén. Nǐ shì nǎ guó rén?*  
+  Soy chino, de Shanghái. ¿De qué país eres tú?  
+- **A:** 我是西班牙人，我是巴塞罗那人。  
+  *Wǒ shì Xībānyárén, wǒ shì Bāsàiluónàrén.*  
+  Soy español, de Barcelona.  
+- **B:** 你会说什么语言？  
+  *Nǐ huì shuō shénme yǔyán?*  
+  ¿Qué idiomas sabes hablar?  
+- **A:** 我会说西班牙语、英语和汉语。  
+  *Wǒ huì shuō Xībānyáyǔ, Yīngyǔ hé Hànyǔ.*  
+  Sé hablar español, inglés y chino.
+
+### Recordatorios fonéticos de la sesión
+
+- **¡Atención al tono de `会` (*huì*) y sandhi en `不会`!**
+  - **`会`** («saber») lleva **4.º tono descendente** (*huì*) — cuidado con no pronunciarlo en 2.º tono ascendente (*huí*, que corresponde a `回`, «volver»).
+  - Al negarlo con `不`, como precede a un 4.º tono (*huì*), `不` sube obligatoriamente a **2.º tono**: **`不会`** se pronuncia **`[bú huì]`**.
+- **Tonos en `什么` (*shénme*) y `哪` (*nǎ*):**
+  - En **`什么`** (*shénme*), la primera sílaba es **2.º tono ascendente** (*shén*) y la segunda va en **tono neutro** (*me*), igual que ocurre en `名字` (*míngzi*).
+  - En **`哪国人`** (*nǎ guó rén*), `哪` (3.er tono) se articula como **medio tercer tono** bajo delante del 2.º tono `guó`.
+
 

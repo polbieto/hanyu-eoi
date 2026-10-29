@@ -58,6 +58,7 @@ function getLessonSidebarGroups() {
 }
 
 export default defineConfig({
+  base: '/hanyu-eoi/',
   title: 'Mis Apuntes de Chino',
   description: 'Temario y lecciones de chino mandarín sintetizados',
   lang: 'es-ES',
