@@ -165,6 +165,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      hanzi-writer:
+        specifier: ^3.7.3
+        version: 3.7.3
     devDependencies:
       vitepress:
         specifier: ^1.5.0
@@ -782,6 +786,9 @@ packages:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+
+  hanzi-writer@3.7.3:
+    resolution: {integrity: sha512-fdOFrb1cXWL/pV/oplJkcdziCvjJzhhf+qoIBm5IpVGxPBZEu4eLB6ZG5RJDbKXyNbNlyx8oIpa3XrcUBcSXpg==}
 
   hast-util-to-html@9.0.5:
     resolution: {integrity: sha512-OguPdidb+fbHQSU4Q4ZiLKnzWo8Wwsf5bZfbvu7//a9oTYoqD/fWpe96NuHkoS9h0ccGOTe0C4NGXdtS0iObOw==}
@@ -1527,6 +1534,8 @@ snapshots:
 
   fsevents@2.3.3:
     optional: true
+
+  hanzi-writer@3.7.3: {}
 
   hast-util-to-html@9.0.5:
     dependencies:
