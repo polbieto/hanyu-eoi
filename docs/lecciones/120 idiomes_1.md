@@ -9,21 +9,21 @@ description: "Sistema completo para formar gentilicios y nombres de idiomas habl
 
 | Hanzi | Pinyin | Categoría | Significado (ES) | Frase corta de ejemplo |
 | :---: | :---: | :---: | :--- | :--- |
-| **国家** | *guójiā* | Sust. | País / Estado | 这是什么国家？ (¿Qué país es este?) |
-| **国籍** | *guójí* | Sust. | Nacionalidad / ciudadanía | 问国籍 (Preguntar la nacionalidad) |
-| **语言** | *yǔyán* | Sust. | Lengua / idioma | 学习语言 (Estudiar idiomas) |
-| **汉语 / 中文** | *Hànyǔ / Zhōngwén* | Sust. | Chino (lengua hablada / lengua general y escrita) | 我说汉语 (Yo hablo chino) |
-| **西班牙语 / 西班牙文** | *Xībānyáyǔ / Xībānyáwén* | Sust. | Español / castellano (hablado / escrito) | 我说西班牙语 (Hablo español) |
-| **俄罗斯 / 俄国** | *Éluósī / Éguó* | N. prop. | Rusia | 他是俄罗斯人 (Él es ruso) |
-| **俄语 / 俄文** | *Éyǔ / Éwén* | Sust. | Idioma ruso (hablado / escrito) | 她学习俄语 (Ella estudia ruso) |
-| **日语 / 日文** | *Rìyǔ / Rìwén* | Sust. | Idioma japonés (hablado / escrito) | 我不学习日语 (No estudio japonés) |
-| **英国** | *Yīngguó* | N. prop. | Reino Unido / Gran Bretaña | 他是英国人 (Él es británico) |
-| **美国** | *Měiguó* | N. prop. | Estados Unidos | 她是美国人 (Ella es estadounidense) |
-| **英语 / 英文** | *Yīngyǔ / Yīngwén* | Sust. | Idioma inglés (hablado / escrito) | 你学习英语吗？ (¿Estudias inglés?) |
-| **意大利语 / 意大利文** | *Yìdàlìyǔ / Yìdàlìwén* | Sust. | Idioma italiano (hablado / escrito) | 他说意大利语 (Él habla italiano) |
-| **法语 / 法文** | *Fǎyǔ / Fǎwén* | Sust. | Idioma francés (hablado / escrito) | 她说法语 (Ella habla francés) |
-| **韩语** | *Hányǔ* | Sust. | Idioma coreano | 你说韩语吗？ (¿Hablas coreano?) |
-| **王老师** | *Wáng lǎoshī* | Sust. / N. prop. | Profesor/a Wang | 你认识王老师吗？ (¿Conoces al profesor Wang?) |
+| **国家** <Speak text="国家"/> | *guójiā* | Sust. | País / Estado | 这是什么国家？ <Speak text="这是什么国家？"/> (¿Qué país es este?) |
+| **国籍** <Speak text="国籍"/> | *guójí* | Sust. | Nacionalidad / ciudadanía | 问国籍 <Speak text="问国籍"/> (Preguntar la nacionalidad) |
+| **语言** <Speak text="语言"/> | *yǔyán* | Sust. | Lengua / idioma | 学习语言 <Speak text="学习语言"/> (Estudiar idiomas) |
+| **汉语** <Speak text="汉语"/> / **中文** <Speak text="中文"/> | *Hànyǔ / Zhōngwén* | Sust. | Chino (lengua hablada / lengua general y escrita) | 我说汉语 <Speak text="我说汉语"/> (Yo hablo chino) |
+| **西班牙语** <Speak text="西班牙语"/> / **西班牙文** <Speak text="西班牙文"/> | *Xībānyáyǔ / Xībānyáwén* | Sust. | Español / castellano (hablado / escrito) | 我说西班牙语 <Speak text="我说西班牙语"/> (Hablo español) |
+| **俄罗斯** <Speak text="俄罗斯"/> / **俄国** <Speak text="俄国"/> | *Éluósī / Éguó* | N. prop. | Rusia | 他是俄罗斯人 <Speak text="他是俄罗斯人"/> (Él es ruso) |
+| **俄语** <Speak text="俄语"/> / **俄文** <Speak text="俄文"/> | *Éyǔ / Éwén* | Sust. | Idioma ruso (hablado / escrito) | 她学习俄语 <Speak text="她学习俄语"/> (Ella estudia ruso) |
+| **日语** <Speak text="日语"/> / **日文** <Speak text="日文"/> | *Rìyǔ / Rìwén* | Sust. | Idioma japonés (hablado / escrito) | 我不学习日语 <Speak text="我不学习日语"/> (No estudio japonés) |
+| **英国** <Speak text="英国"/> | *Yīngguó* | N. prop. | Reino Unido / Gran Bretaña | 他是英国人 <Speak text="他是英国人"/> (Él es británico) |
+| **美国** <Speak text="美国"/> | *Měiguó* | N. prop. | Estados Unidos | 她是美国人 <Speak text="她是美国人"/> (Ella es estadounidense) |
+| **英语** <Speak text="英语"/> / **英文** <Speak text="英文"/> | *Yīngyǔ / Yīngwén* | Sust. | Idioma inglés (hablado / escrito) | 你学习英语吗？ <Speak text="你学习英语吗？"/> (¿Estudias inglés?) |
+| **意大利语** <Speak text="意大利语"/> / **意大利文** <Speak text="意大利文"/> | *Yìdàlìyǔ / Yìdàlìwén* | Sust. | Idioma italiano (hablado / escrito) | 他说意大利语 <Speak text="他说意大利语"/> (Él habla italiano) |
+| **法语** <Speak text="法语"/> / **法文** <Speak text="法文"/> | *Fǎyǔ / Fǎwén* | Sust. | Idioma francés (hablado / escrito) | 她说法语 <Speak text="她说法语"/> (Ella habla francés) |
+| **韩语** <Speak text="韩语"/> | *Hányǔ* | Sust. | Idioma coreano | 你说韩语吗？ <Speak text="你说韩语吗？"/> (¿Hablas coreano?) |
+| **王老师** <Speak text="王老师"/> | *Wáng lǎoshī* | Sust. / N. prop. | Profesor/a Wang | 你认识王老师吗？ <Speak text="你认识王老师吗？"/> (¿Conoces al profesor Wang?) |
 
 ## 📐 Estructuras Gramaticales y Patrones
 
@@ -36,20 +36,20 @@ description: "Sistema completo para formar gentilicios y nombres de idiomas habl
 
 | 国家 (`国` — País) | 国籍 (`人` — Nacionalidad) | 语言 (`语` — Hablada) | 语言 (`文` — Escrita / General) |
 | :--- | :--- | :--- | :--- |
-| **中国** (*Zhōngguó*) | **中国人** (*Zhōngguórén*) | **汉语** (*Hànyǔ*) | **中文** (*Zhōngwén*) |
-| **西班牙** (*Xībānyá*) | **西班牙人** (*Xībānyárén*) | **西班牙语** (*Xībānyáyǔ*) | **西班牙文** (*Xībānyáwén*) |
-| **俄罗斯 / 俄国** (*Éluósī / Éguó*) | **俄罗斯人** (*Éluósīrén*) | **俄语** (*Éyǔ*) | **俄文** (*Éwén*) |
-| **日本** (*Rìběn*) | **日本人** (*Rìběnrén*) | **日语** (*Rìyǔ*) | **日文** (*Rìwén*) |
-| **英国** (*Yīngguó*) | **英国人** (*Yīngguórén*) | **英语** (*Yīngyǔ*) | **英文** (*Yīngwén*) |
-| **美国** (*Měiguó*) | **美国人** (*Měiguórén*) | **英语** (*Yīngyǔ*) | **英文** (*Yīngwén*) |
-| **意大利** (*Yìdàlì*) | **意大利人** (*Yìdàlìrén*) | **意大利语** (*Yìdàlìyǔ*) | **意大利文** (*Yìdàlìwén*) |
-| **法国** (*Fǎguó*) | **法国人** (*Fǎguórén*) | **法语** (*Fǎyǔ*) | **法文** (*Fǎwén*) |
+| **中国** <Speak text="中国"/> (*Zhōngguó*) | **中国人** <Speak text="中国人"/> (*Zhōngguórén*) | **汉语** <Speak text="汉语"/> (*Hànyǔ*) | **中文** <Speak text="中文"/> (*Zhōngwén*) |
+| **西班牙** <Speak text="西班牙"/> (*Xībānyá*) | **西班牙人** <Speak text="西班牙人"/> (*Xībānyárén*) | **西班牙语** <Speak text="西班牙语"/> (*Xībānyáyǔ*) | **西班牙文** <Speak text="西班牙文"/> (*Xībānyáwén*) |
+| **俄罗斯** <Speak text="俄罗斯"/> / **俄国** <Speak text="俄国"/> (*Éluósī / Éguó*) | **俄罗斯人** <Speak text="俄罗斯人"/> (*Éluósīrén*) | **俄语** <Speak text="俄语"/> (*Éyǔ*) | **俄文** <Speak text="俄文"/> (*Éwén*) |
+| **日本** <Speak text="日本"/> (*Rìběn*) | **日本人** <Speak text="日本人"/> (*Rìběnrén*) | **日语** <Speak text="日语"/> (*Rìyǔ*) | **日文** <Speak text="日文"/> (*Rìwén*) |
+| **英国** <Speak text="英国"/> (*Yīngguó*) | **英国人** <Speak text="英国人"/> (*Yīngguórén*) | **英语** <Speak text="英语"/> (*Yīngyǔ*) | **英文** <Speak text="英文"/> (*Yīngwén*) |
+| **美国** <Speak text="美国"/> (*Měiguó*) | **美国人** <Speak text="美国人"/> (*Měiguórén*) | **英语** <Speak text="英语"/> (*Yīngyǔ*) | **英文** <Speak text="英文"/> (*Yīngwén*) |
+| **意大利** <Speak text="意大利"/> (*Yìdàlì*) | **意大利人** <Speak text="意大利人"/> (*Yìdàlìrén*) | **意大利语** <Speak text="意大利语"/> (*Yìdàlìyǔ*) | **意大利文** <Speak text="意大利文"/> (*Yìdàlìwén*) |
+| **法国** <Speak text="法国"/> (*Fǎguó*) | **法国人** <Speak text="法国人"/> (*Fǎguórén*) | **法语** <Speak text="法语"/> (*Fǎyǔ*) | **法文** <Speak text="法文"/> (*Fǎwén*) |
 
-- **Hanzi:** 他是美国人，他说英语。
+- **Hanzi:** 他是美国人，他说英语。 <Speak text="他是美国人，他说英语。"/>
 - **Pinyin:** *Tā shì Měiguórén, tā shuō Yīngyǔ.*
 - **Español:** Él es estadounidense y habla inglés.
 
-- **Hanzi:** 她是俄罗斯人，她说俄语。
+- **Hanzi:** 她是俄罗斯人，她说俄语。 <Speak text="她是俄罗斯人，她说俄语。"/>
 - **Pinyin:** *Tā shì Éluósīrén, tā shuō Éyǔ.*
 - **Español:** Ella es rusa y habla ruso.
 
@@ -61,39 +61,39 @@ description: "Sistema completo para formar gentilicios y nombres de idiomas habl
 
 Los verbos de acción habituales en presente o verdad general se niegan anteponiendo **`不`** (*bù*) directamente al verbo (`不学习`, `不说`, `不认识`).
 
-- **Hanzi:** 你学习英语吗？——我学习英语。 / 我不学习英语。
+- **Hanzi:** 你学习英语吗？ <Speak text="你学习英语吗？"/> ——我学习英语。 <Speak text="我学习英语。"/> / 我不学习英语。 <Speak text="我不学习英语。"/>
 - **Pinyin:** *Nǐ xuéxí Yīngyǔ ma? — Wǒ xuéxí Yīngyǔ. / Wǒ bù xuéxí Yīngyǔ.*
 - **Español:** ¿Estudias inglés? — Estudio inglés. / No estudio inglés.
 
-- **Hanzi:** 你说韩语吗？——我说韩语。 / 我不说韩语。
+- **Hanzi:** 你说韩语吗？ <Speak text="你说韩语吗？"/> ——我说韩语。 <Speak text="我说韩语。"/> / 我不说韩语。 <Speak text="我不说韩语。"/>
 - **Pinyin:** *Nǐ shuō Hányǔ ma? — Wǒ shuō Hányǔ. / Wǒ bù shuō Hányǔ.*
 - **Español:** ¿Hablas coreano? — Hablo coreano. / No hablo coreano.
 
-- **Hanzi:** 你认识王老师吗？——我认识王老师。 / 我不认识王老师。
+- **Hanzi:** 你认识王老师吗？ <Speak text="你认识王老师吗？"/> ——我认识王老师。 <Speak text="我认识王老师。"/> / 我不认识王老师。 <Speak text="我不认识王老师。"/>
 - **Pinyin:** *Nǐ rènshi Wáng lǎoshī ma? — Wǒ rènshi Wáng lǎoshī. / Wǒ bù rènshi Wáng lǎoshī.*
 - **Español:** ¿Conoces al profesor Wang? — Conozco al profesor Wang. / No conozco al profesor Wang.
 
 ## 💬 Diálogos Clave
 
 ### Entrevista entre compañeros (`互相提问`)
-- **A:** 你学习英语吗？  
+- **A:** 你学习英语吗？ <Speak text="你学习英语吗？"/>  
   *Nǐ xuéxí Yīngyǔ ma?*  
   ¿Estudias inglés?  
-- **B:** 我不学习英语，我学习汉语。  
+- **B:** 我不学习英语，我学习汉语。 <Speak text="我不学习英语，我学习汉语。"/>  
   *Wǒ bù xuéxí Yīngyǔ, wǒ xuéxí Hànyǔ.*  
   No estudio inglés, estudio chino.
 
-- **A:** 你说韩语吗？  
+- **A:** 你说韩语吗？ <Speak text="你说韩语吗？"/>  
   *Nǐ shuō Hányǔ ma?*  
   ¿Hablas coreano?  
-- **B:** 我不说韩语，我说西班牙语和法语。  
+- **B:** 我不说韩语，我说西班牙语和法语。 <Speak text="我不说韩语，我说西班牙语和法语。"/>  
   *Wǒ bù shuō Hányǔ, wǒ shuō Xībānyáyǔ hé Fǎyǔ.*  
   No hablo coreano; hablo español y francés.
 
-- **A:** 你认识王老师吗？  
+- **A:** 你认识王老师吗？ <Speak text="你认识王老师吗？"/>  
   *Nǐ rènshi Wáng lǎoshī ma?*  
   ¿Conoces al profesor Wang?  
-- **B:** 我认识王老师。  
+- **B:** 我认识王老师。 <Speak text="我认识王老师。"/>  
   *Wǒ rènshi Wáng lǎoshī.*  
   Sí, conozco al profesor Wang.
 

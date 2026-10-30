@@ -9,29 +9,29 @@ description: "Presentarse en chino (自我介绍), sustantivos como modificador 
 
 | Hanzi | Pinyin | Categoría | Significado (ES) | Frase corta de ejemplo |
 | :---: | :---: | :---: | :--- | :--- |
-| **认识** | *rènshi* | Verbo | Conocer (a alguien / caracteres) | 我们认识一下 (Conozcámonos un poco) |
-| **一下** | *yīxià* | Comp. | Un poco / un momento (suaviza el verbo) | 认识一下 (Presentarnos / conocernos un poco) |
-| **自我介绍** | *zìwǒ jièshào* | Sust. / Verbo | Autopresentación / presentarse | 请自我介绍 (Por favor, preséntate) |
-| **留学生** | *liúxuéshēng* | Sust. | Estudiante extranjero / de intercambio | 我是留学生 (Soy estudiante extranjero) |
-| **学习** | *xuéxí* | Verbo | Estudiar / aprender | 我学习中文 (Estudio chino) |
-| **和** | *hé* | Conj. | Y (une sustantivos o pronombres) | 英语和汉语 (Inglés y chino) |
-| **中文** | *Zhōngwén* | Sust. | Idioma chino (general / escrito) | 中文名字 (Nombre en chino) |
-| **名字** | *míngzi* | Sust. | Nombre | 我的中文名字 (Mi nombre chino) |
-| **朋友** | *péngyou* | Sust. | Amigo / amiga | 中国朋友 (Amigo chino) |
-| **德国** | *Déguó* | N. prop. | Alemania | 我是德国人 (Soy alemán/a) |
-| **西班牙** | *Xībānyá* | N. prop. | España | 我是西班牙人 (Soy español/a) |
-| **英语** | *Yīngyǔ* | Sust. | Idioma inglés | 我学习英语 (Estudio inglés) |
-| **对 / 错** | *duì / cuò* | Adj. | Correcto (verdadero) / incorrecto (falso) | 对不对？ (¿Es correcto?) |
-| **在 / 不在** | *zài / bù zài* | Verbo | Estar presente / no estar | 琳娜不在 (Linna no está) |
-| **课堂常用语** | *kètáng chángyòngyǔ* | Expr. | Expresiones frecuentes de clase | 学习课堂常用语 (Aprender frases de aula) |
-| **请** | *qǐng* | Verbo | Por favor (invitación cortés) | 请进！ (¡Adelante, por favor!) |
-| **进** | *jìn* | Verbo | Entrar / pasar | 进！ (¡Adelante! / ¡Pasa!) |
-| **说** | *shuō* | Verbo | Hablar / decir | 我说，你们听 (Yo hablo, vosotros escucháis) |
-| **听** | *tīng* | Verbo | Escuchar | 请听 (Escuchad, por favor) |
-| **星期** | *xīngqī* | Sust. | Semana (+ número = día de la semana) | 下个星期 (La semana que viene) |
-| **星期二** | *xīngqī'èr* | Sust. | Martes | 星期二见！ (¡Hasta el martes!) |
-| **星期四** | *xīngqīsì* | Sust. | Jueves | 星期四见！ (¡Hasta el jueves!) |
-| **见** | *jiàn* | Verbo | Ver / nos vemos («hasta...») | 下个星期见！ (¡Hasta la semana que viene!) |
+| **认识** <Speak text="认识"/> | *rènshi* | Verbo | Conocer (a alguien / caracteres) | 我们认识一下 <Speak text="我们认识一下"/> (Conozcámonos un poco) |
+| **一下** <Speak text="一下"/> | *yīxià* | Comp. | Un poco / un momento (suaviza el verbo) | 认识一下 <Speak text="认识一下"/> (Presentarnos / conocernos un poco) |
+| **自我介绍** <Speak text="自我介绍"/> | *zìwǒ jièshào* | Sust. / Verbo | Autopresentación / presentarse | 请自我介绍 <Speak text="请自我介绍"/> (Por favor, preséntate) |
+| **留学生** <Speak text="留学生"/> | *liúxuéshēng* | Sust. | Estudiante extranjero / de intercambio | 我是留学生 <Speak text="我是留学生"/> (Soy estudiante extranjero) |
+| **学习** <Speak text="学习"/> | *xuéxí* | Verbo | Estudiar / aprender | 我学习中文 <Speak text="我学习中文"/> (Estudio chino) |
+| **和** <Speak text="和"/> | *hé* | Conj. | Y (une sustantivos o pronombres) | 英语和汉语 <Speak text="英语和汉语"/> (Inglés y chino) |
+| **中文** <Speak text="中文"/> | *Zhōngwén* | Sust. | Idioma chino (general / escrito) | 中文名字 <Speak text="中文名字"/> (Nombre en chino) |
+| **名字** <Speak text="名字"/> | *míngzi* | Sust. | Nombre | 我的中文名字 <Speak text="我的中文名字"/> (Mi nombre chino) |
+| **朋友** <Speak text="朋友"/> | *péngyou* | Sust. | Amigo / amiga | 中国朋友 <Speak text="中国朋友"/> (Amigo chino) |
+| **德国** <Speak text="德国"/> | *Déguó* | N. prop. | Alemania | 我是德国人 <Speak text="我是德国人"/> (Soy alemán/a) |
+| **西班牙** <Speak text="西班牙"/> | *Xībānyá* | N. prop. | España | 我是西班牙人 <Speak text="我是西班牙人"/> (Soy español/a) |
+| **英语** <Speak text="英语"/> | *Yīngyǔ* | Sust. | Idioma inglés | 我学习英语 <Speak text="我学习英语"/> (Estudio inglés) |
+| **对** <Speak text="对"/> / **错** <Speak text="错"/> | *duì / cuò* | Adj. | Correcto (verdadero) / incorrecto (falso) | 对不对？ <Speak text="对不对？"/> (¿Es correcto?) |
+| **在** <Speak text="在"/> / **不在** <Speak text="不在"/> | *zài / bù zài* | Verbo | Estar presente / no estar | 琳娜不在 <Speak text="琳娜不在"/> (Linna no está) |
+| **课堂常用语** <Speak text="课堂常用语"/> | *kètáng chángyòngyǔ* | Expr. | Expresiones frecuentes de clase | 学习课堂常用语 <Speak text="学习课堂常用语"/> (Aprender frases de aula) |
+| **请** <Speak text="请"/> | *qǐng* | Verbo | Por favor (invitación cortés) | 请进！ <Speak text="请进！"/> (¡Adelante, por favor!) |
+| **进** <Speak text="进"/> | *jìn* | Verbo | Entrar / pasar | 进！ <Speak text="进！"/> (¡Adelante! / ¡Pasa!) |
+| **说** <Speak text="说"/> | *shuō* | Verbo | Hablar / decir | 我说，你们听 <Speak text="我说，你们听"/> (Yo hablo, vosotros escucháis) |
+| **听** <Speak text="听"/> | *tīng* | Verbo | Escuchar | 请听 <Speak text="请听"/> (Escuchad, por favor) |
+| **星期** <Speak text="星期"/> | *xīngqī* | Sust. | Semana (+ número = día de la semana) | 下个星期 <Speak text="下个星期"/> (La semana que viene) |
+| **星期二** <Speak text="星期二"/> | *xīngqī'èr* | Sust. | Martes | 星期二见！ <Speak text="星期二见！"/> (¡Hasta el martes!) |
+| **星期四** <Speak text="星期四"/> | *xīngqīsì* | Sust. | Jueves | 星期四见！ <Speak text="星期四见！"/> (¡Hasta el jueves!) |
+| **见** <Speak text="见"/> | *jiàn* | Verbo | Ver / nos vemos («hasta...») | 下个星期见！ <Speak text="下个星期见！"/> (¡Hasta la semana que viene!) |
 
 ## 📐 Estructuras Gramaticales y Patrones
 
@@ -47,11 +47,11 @@ Cuando un sustantivo indica la **naturaleza, lengua, nacionalidad o categoría f
 
 Si además se añade un poseedor personal (`我`, `你`, `他`), ese poseedor sí puede llevar `的` delante del bloque nominal:
 
-- **Hanzi:** 我的中文名字叫马大为。
+- **Hanzi:** 我的中文名字叫马大为。 <Speak text="我的中文名字叫马大为。"/>
 - **Pinyin:** *Wǒ de Zhōngwén míngzi jiào Mǎ Dàwéi.*
 - **Español:** Mi nombre en chino es Ma Dawei.
 
-- **Hanzi:** 中国朋友叫宋华。
+- **Hanzi:** 中国朋友叫宋华。 <Speak text="中国朋友叫宋华。"/>
 - **Pinyin:** *Zhōngguó péngyou jiào Sòng Huá.*
 - **Español:** El amigo chino se llama Song Hua.
 
@@ -61,11 +61,11 @@ Si además se añade un poseedor personal (`我`, `你`, `他`), ese poseedor s�
 
 Para presentarse de forma ordenada se encadenan cuatro oraciones breves con `叫` (*jiào*), `是` (*shì*) y `学习` (*xuéxí*). La conjunción `和` (*hé*, «y») **solo une sustantivos o pronombres** (`英语和汉语`), nunca oraciones completas.
 
-- **Hanzi:** 我叫安娜。我是德国人。我是留学生。我学习英语和汉语。
+- **Hanzi:** 我叫安娜。我是德国人。我是留学生。我学习英语和汉语。 <Speak text="我叫安娜。我是德国人。我是留学生。我学习英语和汉语。"/>
 - **Pinyin:** *Wǒ jiào Ānnà. Wǒ shì Déguórén. Wǒ shì liúxuéshēng. Wǒ xuéxí Yīngyǔ hé Hànyǔ.*
 - **Español:** Me llamo Anna. Soy alemana. Soy estudiante extranjera. Estudio inglés y chino.
 
-- **Hanzi:** 我叫胡安。我是西班牙人。我是留学生。我学习中文。
+- **Hanzi:** 我叫胡安。我是西班牙人。我是留学生。我学习中文。 <Speak text="我叫胡安。我是西班牙人。我是留学生。我学习中文。"/>
 - **Pinyin:** *Wǒ jiào Hú'ān. Wǒ shì Xībānyárén. Wǒ shì liúxuéshēng. Wǒ xuéxí Zhōngwén.*
 - **Español:** Me llamo Juan. Soy español. Soy estudiante extranjero. Estudio chino.
 
@@ -75,35 +75,35 @@ Para presentarse de forma ordenada se encadenan cuatro oraciones breves con `叫
 
 De la misma forma que `再见` (*zàijiàn*) significa literalmente «volver a vernos», sustituir `再` por un momento concreto equivale en español a **«¡Hasta el...!»**.
 
-- **Hanzi:** 星期二见！ / 星期四见！
+- **Hanzi:** 星期二见！ <Speak text="星期二见！"/> / 星期四见！ <Speak text="星期四见！"/>
 - **Pinyin:** *Xīngqī'èr jiàn! / Xīngqīsì jiàn!*
 - **Español:** ¡Hasta el martes! / ¡Hasta el jueves!
 
-- **Hanzi:** 下个星期见！
+- **Hanzi:** 下个星期见！ <Speak text="下个星期见！"/>
 - **Pinyin:** *Xià gè xīngqī jiàn!*
 - **Español:** ¡Hasta la semana que viene!
 
 ## 💬 Diálogos Clave
 
 ### Presentación en clase (`我们认识一下`)
-- **安娜 (Ānnà):** 你好。我叫安娜。我是德国人。我是留学生。我学习英语和汉语。  
+- **安娜 (Ānnà):** 你好。我叫安娜。我是德国人。我是留学生。我学习英语和汉语。 <Speak text="你好。我叫安娜。我是德国人。我是留学生。我学习英语和汉语。"/>  
   *Nǐ hǎo. Wǒ jiào Ānnà. Wǒ shì Déguórén. Wǒ shì liúxuéshēng. Wǒ xuéxí Yīngyǔ hé Hànyǔ.*  
   Hola. Me llamo Anna. Soy alemana. Soy estudiante extranjera. Estudio inglés y chino.  
-- **胡安 (Hú'ān):** 你好。我叫胡安。我是西班牙人。我是留学生。我学习中文。  
+- **胡安 (Hú'ān):** 你好。我叫胡安。我是西班牙人。我是留学生。我学习中文。 <Speak text="你好。我叫胡安。我是西班牙人。我是留学生。我学习中文。"/>  
   *Nǐ hǎo. Wǒ jiào Hú'ān. Wǒ shì Xībānyárén. Wǒ shì liúxuéshēng. Wǒ xuéxí Zhōngwén.*  
   Hola. Me llamo Juan. Soy español. Soy estudiante extranjero. Estudio chino.
 
 ### En la puerta y en el aula (`课堂常用语`)
-- **学生:** 老师好！  
+- **学生:** 老师好！ <Speak text="老师好！"/>  
   *Lǎoshī hǎo!*  
   ¡Hola, profesor/a!  
-- **老师:** 请进！我说，你们听。  
+- **老师:** 请进！我说，你们听。 <Speak text="请进！我说，你们听。"/>  
   *Qǐng jìn! Wǒ shuō, nǐmen tīng.*  
   ¡Adelante, por favor! Yo hablo y vosotros escucháis.  
-- **老师:** 下个星期见！  
+- **老师:** 下个星期见！ <Speak text="下个星期见！"/>  
   *Xià gè xīngqī jiàn!*  
   ¡Hasta la semana que viene!  
-- **学生:** 星期二见！  
+- **学生:** 星期二见！ <Speak text="星期二见！"/>  
   *Xīngqī'èr jiàn!*  
   ¡Hasta el martes!
 
