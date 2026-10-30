@@ -61,13 +61,17 @@ description: "Finales nasales (-n vs. -ng), plural de pronombres con 们, adverb
 
 El sufijo átono `们` (*men*) pluraliza los pronombres personales: `我` → `我们` (*wǒmen*), `你` → `你们` (*nǐmen*), y las tres formas de tercera persona `他 / 她 / 它` → `他们 / 她们 / 它们` (*tāmen*).
 
-- **Hanzi:** 你们好吗？ <Speak text="你们好吗？"/>
-- **Pinyin:** *Nǐmen hǎo ma?*
-- **Español:** ¿Cómo estáis vosotros?
+<Sentence
+  hz="你们好吗？"
+  py="Nǐmen hǎo ma?"
+  es="¿Cómo estáis vosotros?"
+/>
 
-- **Hanzi:** 他们很好。 <Speak text="他们很好。"/>
-- **Pinyin:** *Tāmen hěn hǎo.*
-- **Español:** Ellos están muy bien.
+<Sentence
+  hz="他们很好。"
+  py="Tāmen hěn hǎo."
+  es="Ellos están muy bien."
+/>
 
 ### 2. Gradación de adjetivos (`非常` / `很` / `不`)
 
@@ -75,13 +79,17 @@ El sufijo átono `们` (*men*) pluraliza los pronombres personales: `我` → `�
 
 Los adverbios de grado preceden siempre al adjetivo (o verbo psicológico). Cuando el sujeto se sobreentiende por el contexto, puede omitirse (`很冷` «hace frío», `不冷` «no hace frío»).
 
-- **Hanzi:** 妈妈非常忙。 <Speak text="妈妈非常忙。"/>
-- **Pinyin:** *Māma fēicháng máng.*
-- **Español:** Mamá está ocupadísima.
+<Sentence
+  hz="妈妈非常忙。"
+  py="Māma fēicháng máng."
+  es="Mamá está ocupadísima."
+/>
 
-- **Hanzi:** 爸爸不忙，妈妈很忙。 <Speak text="爸爸不忙，妈妈很忙。"/>
-- **Pinyin:** *Bàba bù máng, māma hěn máng.*
-- **Español:** Papá no está ocupado, mamá está muy ocupada.
+<Sentence
+  hz="爸爸不忙，妈妈很忙。"
+  py="Bàba bù máng, māma hěn máng."
+  es="Papá no está ocupado, mamá está muy ocupada."
+/>
 
 ### 3. Preguntas recíprocas con `呢` (*ne*) y adverbios `也` (*yě*) y `都` (*dōu*)
 
@@ -90,17 +98,23 @@ Los adverbios de grado preceden siempre al adjetivo (o verbo psicológico). Cuan
 
 `呢` (*ne*) devuelve la pregunta anterior sin repetir el predicado («¿y tú?»). Los adverbios `也` (*yě*, también) y `都` (*dōu*, todos/ambos) **siempre van detrás del sujeto y delante del verbo, de `很` o de `不`**.
 
-- **Hanzi:** 我很好，你呢？——我也很好。 <Speak text="我很好，你呢？我也很好。"/>
-- **Pinyin:** *Wǒ hěn hǎo, nǐ ne? — Wǒ yě hěn hǎo.*
-- **Español:** Yo estoy muy bien, ¿y tú? — Yo también estoy muy bien.
+<Sentence
+  hz="我很好，你呢？——我也很好。"
+  py="Wǒ hěn hǎo, nǐ ne? — Wǒ yě hěn hǎo."
+  es="Yo estoy muy bien, ¿y tú? — Yo también estoy muy bien."
+/>
 
-- **Hanzi:** 我爸爸妈妈都很好。 <Speak text="我爸爸妈妈都很好。"/>
-- **Pinyin:** *Wǒ bàba māma dōu hěn hǎo.*
-- **Español:** Tanto mi padre como mi madre están muy bien.
+<Sentence
+  hz="我爸爸妈妈都很好。"
+  py="Wǒ bàba māma dōu hěn hǎo."
+  es="Tanto mi padre como mi madre están muy bien."
+/>
 
-- **Hanzi:** 我们都不好。 <Speak text="我们都不好。"/>
-- **Pinyin:** *Wǒmen dōu bù hǎo.*
-- **Español:** Ninguno de nosotros está bien.
+<Sentence
+  hz="我们都不好。"
+  py="Wǒmen dōu bù hǎo."
+  es="Ninguno de nosotros está bien."
+/>
 
 ### 4. Pregunta afirmativa-negativa (`正反问句`: estructura `V/Adj. + 不 + V/Adj.`)
 
@@ -108,52 +122,88 @@ Los adverbios de grado preceden siempre al adjetivo (o verbo psicológico). Cuan
 
 Repetir el verbo o el adjetivo en afirmativo y negativo equivale a formular una pregunta cerrada con `吗`. **Importante:** con esta estructura nunca se añade `吗` al final ni se antepone `很`.
 
-- **Hanzi:** 你懂不懂？ <Speak text="你懂不懂？"/>
-- **Pinyin:** *Nǐ dǒng bù dǒng?*
-- **Español:** ¿Entiendes o no? / ¿Lo entiendes?
+<Sentence
+  hz="你懂不懂？"
+  py="Nǐ dǒng bù dǒng?"
+  es="¿Entiendes o no? / ¿Lo entiendes?"
+/>
 
-- **Hanzi:** 冷不冷？ <Speak text="冷不冷？"/>
-- **Pinyin:** *Lěng bù lěng?*
-- **Español:** ¿Hace frío? / ¿Tienes frío?
+<Sentence
+  hz="冷不冷？"
+  py="Lěng bù lěng?"
+  es="¿Hace frío? / ¿Tienes frío?"
+/>
 
 ## 💬 Diálogos Clave
 
 ### Saludos cruzados con `呢` y `也`
-- **A:** 你们好吗？ <Speak text="你们好吗？"/>  
-  *Nǐmen hǎo ma?*  
-  ¿Cómo estáis?  
-- **B:** 我们很好。 <Speak text="我们很好。"/>  
-  *Wǒmen hěn hǎo.*  
-  Nosotros estamos muy bien.  
-- **A:** 你们呢？ <Speak text="你们呢？"/>  
-  *Nǐmen ne?*  
-  ¿Y vosotros?  
-- **C:** 我们也很好。 <Speak text="我们也很好。"/>  
-  *Wǒmen yě hěn hǎo.*  
-  Nosotros también estamos muy bien.
+
+<Sentence
+  speaker="A"
+  hz="你们好吗？"
+  py="Nǐmen hǎo ma?"
+  es="¿Cómo estáis?"
+/>
+<Sentence
+  speaker="B"
+  hz="我们很好。"
+  py="Wǒmen hěn hǎo."
+  es="Nosotros estamos muy bien."
+/>
+<Sentence
+  speaker="A"
+  hz="你们呢？"
+  py="Nǐmen ne?"
+  es="¿Y vosotros?"
+/>
+<Sentence
+  speaker="C"
+  hz="我们也很好。"
+  py="Wǒmen yě hěn hǎo."
+  es="Nosotros también estamos muy bien."
+/>
 
 ### Preguntar por la familia con `都`
-- **A:** 你爸爸妈妈好吗？ <Speak text="你爸爸妈妈好吗？"/>  
-  *Nǐ bàba māma hǎo ma?*  
-  ¿Están bien tu padre y tu madre?  
-- **B:** 我爸爸妈妈都很好。 <Speak text="我爸爸妈妈都很好。"/>  
-  *Wǒ bàba māma dōu hěn hǎo.*  
-  Mis padres están los dos muy bien.
+
+<Sentence
+  speaker="A"
+  hz="你爸爸妈妈好吗？"
+  py="Nǐ bàba māma hǎo ma?"
+  es="¿Están bien tu padre y tu madre?"
+/>
+<Sentence
+  speaker="B"
+  hz="我爸爸妈妈都很好。"
+  py="Wǒ bàba māma dōu hěn hǎo."
+  es="Mis padres están los dos muy bien."
+/>
 
 ### Preguntas `V不V` y respuestas cortas
-- **A:** 懂不懂？ <Speak text="懂不懂？"/>  
-  *Dǒng bù dǒng?*  
-  ¿Se entiende?  
-- **B:** 懂。 <Speak text="懂。"/> / 不懂。 <Speak text="不懂。"/>  
-  *Dǒng. / Bù dǒng.*  
-  Sí entiendo. / No entiendo.
 
-- **A:** 汉语难吗？ <Speak text="汉语难吗？"/>  
-  *Hànyǔ nán ma?*  
-  ¿Es difícil el chino?  
-- **B:** 非常难！ <Speak text="非常难！"/> / 不难。 <Speak text="不难。"/>  
-  *Fēicháng nán! / Bù nán.*  
-  ¡Dificilísimo! / No es difícil.
+<Sentence
+  speaker="A"
+  hz="懂不懂？"
+  py="Dǒng bù dǒng?"
+  es="¿Se entiende?"
+/>
+<Sentence
+  speaker="B"
+  hz="懂。 / 不懂。"
+  py="Dǒng. / Bù dǒng."
+  es="Sí entiendo. / No entiendo."
+/>
+<Sentence
+  speaker="A"
+  hz="汉语难吗？"
+  py="Hànyǔ nán ma?"
+  es="¿Es difícil el chino?"
+/>
+<Sentence
+  speaker="B"
+  hz="非常难！ / 不难。"
+  py="Fēicháng nán! / Bù nán."
+  es="¡Dificilísimo! / No es difícil."
+/>
 
 ## 💡 Fonética y Notas Útiles
 

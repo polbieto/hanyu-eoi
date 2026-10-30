@@ -42,9 +42,11 @@ El sufijo `人` (*rén*) no solo crea gentilicios nacionales (`墨西哥` → `�
 - `马德里` (*Mǎdélǐ*) → **`马德里人`** (*Mǎdélǐrén*, madrileño / de Madrid).
 - `罗马` (*Luómǎ*) → **`罗马人`** (*Luómǎrén*, romano / de Roma).
 
-- **Hanzi:** 她是巴塞罗那人吗？——她不是巴塞罗那人，她是马德里人。 <Speak text="她是巴塞罗那人吗？她不是巴塞罗那人，她是马德里人。"/>
-- **Pinyin:** *Tā shì Bāsàiluónàrén ma? — Tā bù shì Bāsàiluónàrén, tā shì Mǎdélǐrén.*
-- **Español:** ¿Ella es de Barcelona? — Ella no es de Barcelona, es de Madrid.
+<Sentence
+  hz="她是巴塞罗那人吗？——她不是巴塞罗那人，她是马德里人。"
+  py="Tā shì Bāsàiluónàrén ma? — Tā bù shì Bāsàiluónàrén, tā shì Mǎdélǐrén."
+  es="¿Ella es de Barcelona? — Ella no es de Barcelona, es de Madrid."
+/>
 
 ### 2. Contraste clave: `你是哪国人？` (país) vs. `你是哪儿人？` (ciudad o región)
 
@@ -54,13 +56,17 @@ El sufijo `人` (*rén*) no solo crea gentilicios nacionales (`墨西哥` → `�
 - **`哪国人`** (*nǎ guó rén*) pregunta específicamente por el **país / nacionalidad** (`我是西班牙人`, `我是韩国人`).
 - **`哪儿人`** (*nǎr rén*, con `哪儿` «¿dónde?») pregunta de **qué lugar o ciudad** es alguien (`我是巴塞罗那人`, `我是北京人`), aunque según el contexto también admite responder con el país o la provincia.
 
-- **Hanzi:** 你是哪国人？——我是墨西哥人。 <Speak text="你是哪国人？我是墨西哥人。"/>
-- **Pinyin:** *Nǐ shì nǎ guó rén? — Wǒ shì Mòxīgērén.*
-- **Español:** ¿De qué país eres? — Soy mexicano/a.
+<Sentence
+  hz="你是哪国人？——我是墨西哥人。"
+  py="Nǐ shì nǎ guó rén? — Wǒ shì Mòxīgērén."
+  es="¿De qué país eres? — Soy mexicano/a."
+/>
 
-- **Hanzi:** 你是哪儿人？——我是上海人。 <Speak text="你是哪儿人？我是上海人。"/>
-- **Pinyin:** *Nǐ shì nǎr rén? — Wǒ shì Shànghǎirén.*
-- **Español:** ¿De dónde eres (de qué ciudad)? — Soy de Shanghái.
+<Sentence
+  hz="你是哪儿人？——我是上海人。"
+  py="Nǐ shì nǎr rén? — Wǒ shì Shànghǎirén."
+  es="¿De dónde eres (de qué ciudad)? — Soy de Shanghái."
+/>
 
 ### 3. Sustitución en el patrón `是 / 不是` (identidad, profesión y origen)
 
@@ -68,44 +74,73 @@ El sufijo `人` (*rén*) no solo crea gentilicios nacionales (`墨西哥` → `�
 
 El verbo copulativo `是` (*shì*) sirve por igual para identificar profesión (`老师`, `中国学生`), origen (`北京人`, `韩国人`) o el nombre propio de alguien (`大卫`, `李明河`).
 
-- **Hanzi:** 你是韩国人吗？——我不是韩国人，我是中国学生。 <Speak text="你是韩国人吗？我不是韩国人，我是中国学生。"/>
-- **Pinyin:** *Nǐ shì Hánguórén ma? — Wǒ bù shì Hánguórén, wǒ shì Zhōngguó xuéshēng.*
-- **Español:** ¿Eres surcoreano/a? — No soy surcoreano/a, soy estudiante chino/a.
+<Sentence
+  hz="你是韩国人吗？——我不是韩国人，我是中国学生。"
+  py="Nǐ shì Hánguórén ma? — Wǒ bù shì Hánguórén, wǒ shì Zhōngguó xuéshēng."
+  es="¿Eres surcoreano/a? — No soy surcoreano/a, soy estudiante chino/a."
+/>
 
-- **Hanzi:** 你是大卫吗？——我不是大卫，我是李明河。 <Speak text="你是大卫吗？我不是大卫，我是李明河。"/>
-- **Pinyin:** *Nǐ shì Dàwèi ma? — Wǒ bù shì Dàwèi, wǒ shì Lǐ Mínghé.*
-- **Español:** ¿Eres David? — No soy David, soy Li Minghe.
+<Sentence
+  hz="你是大卫吗？——我不是大卫，我是李明河。"
+  py="Nǐ shì Dàwèi ma? — Wǒ bù shì Dàwèi, wǒ shì Lǐ Mínghé."
+  es="¿Eres David? — No soy David, soy Li Minghe."
+/>
 
 ## 💬 Diálogos Clave
 
 ### De lo general (país) a lo específico (ciudad)
-- **A:** 你是哪国人？ <Speak text="你是哪国人？"/>  
-  *Nǐ shì nǎ guó rén?*  
-  ¿De qué país eres?  
-- **B:** 我是西班牙人。 <Speak text="我是西班牙人。"/>  
-  *Wǒ shì Xībānyárén.*  
-  Soy español/a.  
-- **A:** 你是哪儿人？你是马德里人吗？ <Speak text="你是哪儿人？你是马德里人吗？"/>  
-  *Nǐ shì nǎr rén? Nǐ shì Mǎdélǐrén ma?*  
-  ¿De qué parte eres? ¿Eres de Madrid?  
-- **B:** 我不是马德里人，我是巴塞罗那人。 <Speak text="我不是马德里人，我是巴塞罗那人。"/>  
-  *Wǒ bù shì Mǎdélǐrén, wǒ shì Bāsàiluónàrén.*  
-  No soy de Madrid, soy de Barcelona.
+
+<Sentence
+  speaker="A"
+  hz="你是哪国人？"
+  py="Nǐ shì nǎ guó rén?"
+  es="¿De qué país eres?"
+/>
+<Sentence
+  speaker="B"
+  hz="我是西班牙人。"
+  py="Wǒ shì Xībānyárén."
+  es="Soy español/a."
+/>
+<Sentence
+  speaker="A"
+  hz="你是哪儿人？你是马德里人吗？"
+  py="Nǐ shì nǎr rén? Nǐ shì Mǎdélǐrén ma?"
+  es="¿De qué parte eres? ¿Eres de Madrid?"
+/>
+<Sentence
+  speaker="B"
+  hz="我不是马德里人，我是巴塞罗那人。"
+  py="Wǒ bù shì Mǎdélǐrén, wǒ shì Bāsàiluónàrén."
+  es="No soy de Madrid, soy de Barcelona."
+/>
 
 ### Hablar de terceras personas
-- **A:** 他是哪国人？他是日本人吗？ <Speak text="他是哪国人？他是日本人吗？"/>  
-  *Tā shì nǎ guó rén? Tā shì Rìběnrén ma?*  
-  ¿De qué país es él? ¿Es japonés?  
-- **B:** 他不是日本人，他是韩国人。 <Speak text="他不是日本人，他是韩国人。"/>  
-  *Tā bù shì Rìběnrén, tā shì Hánguórén.*  
-  Él no es japonés, es surcoreano.
 
-- **A:** 她是哪儿人？ <Speak text="她是哪儿人？"/>  
-  *Tā shì nǎr rén?*  
-  ¿De dónde es ella?  
-- **B:** 她是北京人。 <Speak text="她是北京人。"/>  
-  *Tā shì Běijīngrén.*  
-  Ella es de Pekín.
+<Sentence
+  speaker="A"
+  hz="他是哪国人？他是日本人吗？"
+  py="Tā shì nǎ guó rén? Tā shì Rìběnrén ma?"
+  es="¿De qué país es él? ¿Es japonés?"
+/>
+<Sentence
+  speaker="B"
+  hz="他不是日本人，他是韩国人。"
+  py="Tā bù shì Rìběnrén, tā shì Hánguórén."
+  es="Él no es japonés, es surcoreano."
+/>
+<Sentence
+  speaker="A"
+  hz="她是哪儿人？"
+  py="Tā shì nǎr rén?"
+  es="¿De dónde es ella?"
+/>
+<Sentence
+  speaker="B"
+  hz="她是北京人。"
+  py="Tā shì Běijīngrén."
+  es="Ella es de Pekín."
+/>
 
 ## 💡 Fonética y Notas Útiles
 
@@ -149,13 +184,17 @@ En la sesión del **27 de octubre** practicamos oralmente una batería completa 
 
 Mientras que en la Lección 1.4 decíamos `我说汉语` (*Wǒ shuō Hànyǔ*, «hablo chino»), anteponer el verbo modal **`会`** (*huì*) indica **competencia o habilidad adquirida mediante estudio o práctica** («*saber* hablar un idioma»). Se niega con **`不会`** (*bù huì*) y en preguntas cerradas con `吗` admite respuesta corta (`会` / `不会`).
 
-- **Hanzi:** 你会说什么语言？——我会说西班牙语、英语和汉语。 <Speak text="你会说什么语言？我会说西班牙语、英语和汉语。"/>
-- **Pinyin:** *Nǐ huì shuō shénme yǔyán? — Wǒ huì shuō Xībānyáyǔ, Yīngyǔ hé Hànyǔ.*
-- **Español:** ¿Qué idiomas sabes hablar? — Sé hablar español, inglés y chino.
+<Sentence
+  hz="你会说什么语言？——我会说西班牙语、英语和汉语。"
+  py="Nǐ huì shuō shénme yǔyán? — Wǒ huì shuō Xībānyáyǔ, Yīngyǔ hé Hànyǔ."
+  es="¿Qué idiomas sabes hablar? — Sé hablar español, inglés y chino."
+/>
 
-- **Hanzi:** 你会说韩语吗？——不会，我不会说韩语。 <Speak text="你会说韩语吗？不会，我不会说韩语。"/>
-- **Pinyin:** *Nǐ huì shuō Hányǔ ma? — Bù huì, wǒ bù huì shuō Hányǔ.*
-- **Español:** ¿Sabes hablar coreano? — No, no sé hablar coreano.
+<Sentence
+  hz="你会说韩语吗？——不会，我不会说韩语。"
+  py="Nǐ huì shuō Hányǔ ma? — Bù huì, wǒ bù huì shuō Hányǔ."
+  es="¿Sabes hablar coreano? — No, no sé hablar coreano."
+/>
 
 ### 2. Preguntar el apellido (`姓`) frente al nombre (`叫`)
 
@@ -164,9 +203,11 @@ Mientras que en la Lección 1.4 decíamos `我说汉语` (*Wǒ shuō Hànyǔ*, �
 
 En chino **`姓`** (*xìng*) funciona directamente como verbo («apellidarse»), por lo que va seguido solo de `什么` (**sin** `名字`). Recuerda además que en los nombres chinos el **apellido va siempre delante** del nombre de pila (como en `李明河` *Lǐ Mínghé*, visto arriba).
 
-- **Hanzi:** 他姓什么？他叫什么名字？——他姓李，他叫李明河。 <Speak text="他姓什么？他叫什么名字？他姓李，他叫李明河。"/>
-- **Pinyin:** *Tā xìng shénme? Tā jiào shénme míngzi? — Tā xìng Lǐ, tā jiào Lǐ Mínghé.*
-- **Español:** ¿Cómo se apellida él? ¿Cómo se llama? — Se apellida Li; se llama Li Minghe.
+<Sentence
+  hz="他姓什么？他叫什么名字？——他姓李，他叫李明河。"
+  py="Tā xìng shénme? Tā jiào shénme míngzi? — Tā xìng Lǐ, tā jiào Lǐ Mínghé."
+  es="¿Cómo se apellida él? ¿Cómo se llama? — Se apellida Li; se llama Li Minghe."
+/>
 
 ### 3. Volviendo a `什么` (*shénme*) y `哪` (*nǎ*): repaso contrastivo
 
@@ -180,26 +221,47 @@ En las cuatro frases practicadas se observa claramente cómo funcionan ambos int
 
 ### Diálogo integrador de clase
 
-- **A:** 你好！你姓什么？你叫什么名字？ <Speak text="你好！你姓什么？你叫什么名字？"/>  
-  *Nǐ hǎo! Nǐ xìng shénme? Nǐ jiào shénme míngzi?*  
-  ¡Hola! ¿Cómo te apellidas? ¿Cómo te llamas?  
-- **B:** 我姓李，我叫李明河。你呢？ <Speak text="我姓李，我叫李明河。你呢？"/>  
-  *Wǒ xìng Lǐ, wǒ jiào Lǐ Mínghé. Nǐ ne?*  
-  Me apellido Li, me llamo Li Minghe. ¿Y tú?  
-- **A:** 我叫大卫。你是哪国人？ <Speak text="我叫大卫。你是哪国人？"/>  
-  *Wǒ jiào Dàwèi. Nǐ shì nǎ guó rén?*  
-  Me llamo David. ¿De qué país eres?  
-- **B:** 我是中国人，我是上海人。你是哪国人？ <Speak text="我是中国人，我是上海人。你是哪国人？"/>  
-  *Wǒ shì Zhōngguórén, wǒ shì Shànghǎirén. Nǐ shì nǎ guó rén?*  
-  Soy chino, de Shanghái. ¿De qué país eres tú?  
-- **A:** 我是西班牙人，我是巴塞罗那人。 <Speak text="我是西班牙人，我是巴塞罗那人。"/>  
-  *Wǒ shì Xībānyárén, wǒ shì Bāsàiluónàrén.*  
-  Soy español, de Barcelona.  
-- **B:** 你会说什么语言？ <Speak text="你会说什么语言？"/>  
-  *Nǐ huì shuō shénme yǔyán?*  
-  ¿Qué idiomas sabes hablar?  
-- **A:** 我会说西班牙语、英语和汉语。 <Speak text="我会说西班牙语、英语和汉语。"/>  
-  *Wǒ huì shuō Xībānyáyǔ, Yīngyǔ hé Hànyǔ.*  
-  Sé hablar español, inglés y chino.
+<Sentence
+  speaker="A"
+  hz="你好！你姓什么？你叫什么名字？"
+  py="Nǐ hǎo! Nǐ xìng shénme? Nǐ jiào shénme míngzi?"
+  es="¡Hola! ¿Cómo te apellidas? ¿Cómo te llamas?"
+/>
+<Sentence
+  speaker="B"
+  hz="我姓李，我叫李明河。你呢？"
+  py="Wǒ xìng Lǐ, wǒ jiào Lǐ Mínghé. Nǐ ne?"
+  es="Me apellido Li, me llamo Li Minghe. ¿Y tú?"
+/>
+<Sentence
+  speaker="A"
+  hz="我叫大卫。你是哪国人？"
+  py="Wǒ jiào Dàwèi. Nǐ shì nǎ guó rén?"
+  es="Me llamo David. ¿De qué país eres?"
+/>
+<Sentence
+  speaker="B"
+  hz="我是中国人，我是上海人。你是哪国人？"
+  py="Wǒ shì Zhōngguórén, wǒ shì Shànghǎirén. Nǐ shì nǎ guó rén?"
+  es="Soy chino, de Shanghái. ¿De qué país eres tú?"
+/>
+<Sentence
+  speaker="A"
+  hz="我是西班牙人，我是巴塞罗那人。"
+  py="Wǒ shì Xībānyárén, wǒ shì Bāsàiluónàrén."
+  es="Soy español, de Barcelona."
+/>
+<Sentence
+  speaker="B"
+  hz="你会说什么语言？"
+  py="Nǐ huì shuō shénme yǔyán?"
+  es="¿Qué idiomas sabes hablar?"
+/>
+<Sentence
+  speaker="A"
+  hz="我会说西班牙语、英语和汉语。"
+  py="Wǒ huì shuō Xībānyáyǔ, Yīngyǔ hé Hànyǔ."
+  es="Sé hablar español, inglés y chino."
+/>
 
 

@@ -35,9 +35,11 @@ En chino, los conceptos espaciales `上` (*shàng*, arriba / encima), `中` (*zh
 
 En los extremos del día se sitúan `早上` (*zǎoshang*, primera hora de la mañana) y `晚上` (*wǎnshang*, la noche), formando la secuencia cronológica completa: **`早上` → `上午` → `中午` → `下午` → `晚上`**.
 
-- **Hanzi:** 早上、上午、中午、下午、晚上。 <Speak text="早上、上午、中午、下午、晚上。"/>
-- **Pinyin:** *Zǎoshang, shàngwǔ, zhōngwǔ, xiàwǔ, wǎnshang.*
-- **Español:** Mañana temprano, media mañana, mediodía, tarde y noche.
+<Sentence
+  hz="早上、上午、中午、下午、晚上。"
+  py="Zǎoshang, shàngwǔ, zhōngwǔ, xiàwǔ, wǎnshang."
+  es="Mañana temprano, media mañana, mediodía, tarde y noche."
+/>
 
 ### 2. Saludos según la franja horaria (`[Parte del día] + 好！`)
 
@@ -45,42 +47,67 @@ En los extremos del día se sitúan `早上` (*zǎoshang*, primera hora de la ma
 
 Para saludar especificando el momento del día, basta con añadir `好` (*hǎo*) detrás de la franja horaria correspondiente. A primera hora de la mañana, `早上好！` (*Zǎoshang hǎo!*) se abrevia muy a menudo en el saludo coloquial `早！` (*Zǎo!*).
 
-- **Hanzi:** 早上好！ <Speak text="早上好！"/> / 早！ <Speak text="早！"/>
-- **Pinyin:** *Zǎoshang hǎo! / Zǎo!*
-- **Español:** ¡Buenos días! (temprano por la mañana).
+<Sentence
+  hz="早上好！ / 早！"
+  py="Zǎoshang hǎo! / Zǎo!"
+  es="¡Buenos días! (temprano por la mañana)."
+/>
 
-- **Hanzi:** 下午好！ <Speak text="下午好！"/>
-- **Pinyin:** *Xiàwǔ hǎo!*
-- **Español:** ¡Buenas tardes!
+<Sentence
+  hz="下午好！"
+  py="Xiàwǔ hǎo!"
+  es="¡Buenas tardes!"
+/>
 
-- **Hanzi:** 晚上好！ <Speak text="晚上好！"/>
-- **Pinyin:** *Wǎnshang hǎo!*
-- **Español:** ¡Buenas noches! (al encontrarse o iniciar una conversación por la noche).
+<Sentence
+  hz="晚上好！"
+  py="Wǎnshang hǎo!"
+  es="¡Buenas noches! (al encontrarse o iniciar una conversación por la noche)."
+/>
 
 ## 💬 Diálogos Clave
 
 ### Saludo matutino formal vs. coloquial
-- **A:** 早上好！ <Speak text="早上好！"/>  
-  *Zǎoshang hǎo!*  
-  ¡Buenos días!  
-- **B:** 早！ <Speak text="早！"/>  
-  *Zǎo!*  
-  ¡Buenos días! / ¡Buenas!
+
+<Sentence
+  speaker="A"
+  hz="早上好！"
+  py="Zǎoshang hǎo!"
+  es="¡Buenos días!"
+/>
+<Sentence
+  speaker="B"
+  hz="早！"
+  py="Zǎo!"
+  es="¡Buenos días! / ¡Buenas!"
+/>
 
 ### Saludos a lo largo del día
-- **A:** 老师，上午好！ <Speak text="老师，上午好！"/>  
-  *Lǎoshī, shàngwǔ hǎo!*  
-  ¡Buenos días, profesor/a!  
-- **B:** 上午好！ <Speak text="上午好！"/>  
-  *Shàngwǔ hǎo!*  
-  ¡Buenos días!
 
-- **A:** 下午好！你好吗？ <Speak text="下午好！你好吗？"/>  
-  *Xiàwǔ hǎo! Nǐ hǎo ma?*  
-  ¡Buenas tardes! ¿Cómo estás?  
-- **B:** 晚上好！我很好。 <Speak text="晚上好！我很好。"/>  
-  *Wǎnshang hǎo! Wǒ hěn hǎo.*  
-  ¡Buenas noches! Estoy muy bien.
+<Sentence
+  speaker="A"
+  hz="老师，上午好！"
+  py="Lǎoshī, shàngwǔ hǎo!"
+  es="¡Buenos días, profesor/a!"
+/>
+<Sentence
+  speaker="B"
+  hz="上午好！"
+  py="Shàngwǔ hǎo!"
+  es="¡Buenos días!"
+/>
+<Sentence
+  speaker="A"
+  hz="下午好！你好吗？"
+  py="Xiàwǔ hǎo! Nǐ hǎo ma?"
+  es="¡Buenas tardes! ¿Cómo estás?"
+/>
+<Sentence
+  speaker="B"
+  hz="晚上好！我很好。"
+  py="Wǎnshang hǎo! Wǒ hěn hǎo."
+  es="¡Buenas noches! Estoy muy bien."
+/>
 
 ## 💡 Fonética y Notas Útiles
 

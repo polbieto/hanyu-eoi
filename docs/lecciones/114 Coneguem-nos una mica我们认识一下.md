@@ -47,13 +47,17 @@ Cuando un sustantivo indica la **naturaleza, lengua, nacionalidad o categoría f
 
 Si además se añade un poseedor personal (`我`, `你`, `他`), ese poseedor sí puede llevar `的` delante del bloque nominal:
 
-- **Hanzi:** 我的中文名字叫马大为。 <Speak text="我的中文名字叫马大为。"/>
-- **Pinyin:** *Wǒ de Zhōngwén míngzi jiào Mǎ Dàwéi.*
-- **Español:** Mi nombre en chino es Ma Dawei.
+<Sentence
+  hz="我的中文名字叫马大为。"
+  py="Wǒ de Zhōngwén míngzi jiào Mǎ Dàwéi."
+  es="Mi nombre en chino es Ma Dawei."
+/>
 
-- **Hanzi:** 中国朋友叫宋华。 <Speak text="中国朋友叫宋华。"/>
-- **Pinyin:** *Zhōngguó péngyou jiào Sòng Huá.*
-- **Español:** El amigo chino se llama Song Hua.
+<Sentence
+  hz="中国朋友叫宋华。"
+  py="Zhōngguó péngyou jiào Sòng Huá."
+  es="El amigo chino se llama Song Hua."
+/>
 
 ### 2. Esquema básico de autopresentación (`自我介绍`) y conjunción `和` (*hé*)
 
@@ -61,13 +65,17 @@ Si además se añade un poseedor personal (`我`, `你`, `他`), ese poseedor s�
 
 Para presentarse de forma ordenada se encadenan cuatro oraciones breves con `叫` (*jiào*), `是` (*shì*) y `学习` (*xuéxí*). La conjunción `和` (*hé*, «y») **solo une sustantivos o pronombres** (`英语和汉语`), nunca oraciones completas.
 
-- **Hanzi:** 我叫安娜。我是德国人。我是留学生。我学习英语和汉语。 <Speak text="我叫安娜。我是德国人。我是留学生。我学习英语和汉语。"/>
-- **Pinyin:** *Wǒ jiào Ānnà. Wǒ shì Déguórén. Wǒ shì liúxuéshēng. Wǒ xuéxí Yīngyǔ hé Hànyǔ.*
-- **Español:** Me llamo Anna. Soy alemana. Soy estudiante extranjera. Estudio inglés y chino.
+<Sentence
+  hz="我叫安娜。我是德国人。我是留学生。我学习英语和汉语。"
+  py="Wǒ jiào Ānnà. Wǒ shì Déguórén. Wǒ shì liúxuéshēng. Wǒ xuéxí Yīngyǔ hé Hànyǔ."
+  es="Me llamo Anna. Soy alemana. Soy estudiante extranjera. Estudio inglés y chino."
+/>
 
-- **Hanzi:** 我叫胡安。我是西班牙人。我是留学生。我学习中文。 <Speak text="我叫胡安。我是西班牙人。我是留学生。我学习中文。"/>
-- **Pinyin:** *Wǒ jiào Hú'ān. Wǒ shì Xībānyárén. Wǒ shì liúxuéshēng. Wǒ xuéxí Zhōngwén.*
-- **Español:** Me llamo Juan. Soy español. Soy estudiante extranjero. Estudio chino.
+<Sentence
+  hz="我叫胡安。我是西班牙人。我是留学生。我学习中文。"
+  py="Wǒ jiào Hú'ān. Wǒ shì Xībānyárén. Wǒ shì liúxuéshēng. Wǒ xuéxí Zhōngwén."
+  es="Me llamo Juan. Soy español. Soy estudiante extranjero. Estudio chino."
+/>
 
 ### 3. Despedirse indicando cuándo nos volvemos a ver (`[Tiempo] + 见！`)
 
@@ -75,37 +83,61 @@ Para presentarse de forma ordenada se encadenan cuatro oraciones breves con `叫
 
 De la misma forma que `再见` (*zàijiàn*) significa literalmente «volver a vernos», sustituir `再` por un momento concreto equivale en español a **«¡Hasta el...!»**.
 
-- **Hanzi:** 星期二见！ <Speak text="星期二见！"/> / 星期四见！ <Speak text="星期四见！"/>
-- **Pinyin:** *Xīngqī'èr jiàn! / Xīngqīsì jiàn!*
-- **Español:** ¡Hasta el martes! / ¡Hasta el jueves!
+<Sentence
+  hz="星期二见！ / 星期四见！"
+  py="Xīngqī'èr jiàn! / Xīngqīsì jiàn!"
+  es="¡Hasta el martes! / ¡Hasta el jueves!"
+/>
 
-- **Hanzi:** 下个星期见！ <Speak text="下个星期见！"/>
-- **Pinyin:** *Xià gè xīngqī jiàn!*
-- **Español:** ¡Hasta la semana que viene!
+<Sentence
+  hz="下个星期见！"
+  py="Xià gè xīngqī jiàn!"
+  es="¡Hasta la semana que viene!"
+/>
 
 ## 💬 Diálogos Clave
 
 ### Presentación en clase (`我们认识一下`)
-- **安娜 (Ānnà):** 你好。我叫安娜。我是德国人。我是留学生。我学习英语和汉语。 <Speak text="你好。我叫安娜。我是德国人。我是留学生。我学习英语和汉语。"/>  
-  *Nǐ hǎo. Wǒ jiào Ānnà. Wǒ shì Déguórén. Wǒ shì liúxuéshēng. Wǒ xuéxí Yīngyǔ hé Hànyǔ.*  
-  Hola. Me llamo Anna. Soy alemana. Soy estudiante extranjera. Estudio inglés y chino.  
-- **胡安 (Hú'ān):** 你好。我叫胡安。我是西班牙人。我是留学生。我学习中文。 <Speak text="你好。我叫胡安。我是西班牙人。我是留学生。我学习中文。"/>  
-  *Nǐ hǎo. Wǒ jiào Hú'ān. Wǒ shì Xībānyárén. Wǒ shì liúxuéshēng. Wǒ xuéxí Zhōngwén.*  
-  Hola. Me llamo Juan. Soy español. Soy estudiante extranjero. Estudio chino.
+
+<Sentence
+  speaker="安娜"
+  hz="你好。我叫安娜。我是德国人。我是留学生。我学习英语和汉语。"
+  py="Ānnà: Nǐ hǎo. Wǒ jiào Ānnà. Wǒ shì Déguórén. Wǒ shì liúxuéshēng. Wǒ xuéxí Yīngyǔ hé Hànyǔ."
+  es="Hola. Me llamo Anna. Soy alemana. Soy estudiante extranjera. Estudio inglés y chino."
+/>
+<Sentence
+  speaker="胡安"
+  hz="你好。我叫胡安。我是西班牙人。我是留学生。我学习中文。"
+  py="Hú'ān: Nǐ hǎo. Wǒ jiào Hú'ān. Wǒ shì Xībānyárén. Wǒ shì liúxuéshēng. Wǒ xuéxí Zhōngwén."
+  es="Hola. Me llamo Juan. Soy español. Soy estudiante extranjero. Estudio chino."
+/>
 
 ### En la puerta y en el aula (`课堂常用语`)
-- **学生:** 老师好！ <Speak text="老师好！"/>  
-  *Lǎoshī hǎo!*  
-  ¡Hola, profesor/a!  
-- **老师:** 请进！我说，你们听。 <Speak text="请进！我说，你们听。"/>  
-  *Qǐng jìn! Wǒ shuō, nǐmen tīng.*  
-  ¡Adelante, por favor! Yo hablo y vosotros escucháis.  
-- **老师:** 下个星期见！ <Speak text="下个星期见！"/>  
-  *Xià gè xīngqī jiàn!*  
-  ¡Hasta la semana que viene!  
-- **学生:** 星期二见！ <Speak text="星期二见！"/>  
-  *Xīngqī'èr jiàn!*  
-  ¡Hasta el martes!
+
+<Sentence
+  speaker="学生"
+  hz="老师好！"
+  py="Xuéshēng: Lǎoshī hǎo!"
+  es="¡Hola, profesor/a!"
+/>
+<Sentence
+  speaker="老师"
+  hz="请进！我说，你们听。"
+  py="Lǎoshī: Qǐng jìn! Wǒ shuō, nǐmen tīng."
+  es="¡Adelante, por favor! Yo hablo y vosotros escucháis."
+/>
+<Sentence
+  speaker="老师"
+  hz="下个星期见！"
+  py="Lǎoshī: Xià gè xīngqī jiàn!"
+  es="¡Hasta la semana que viene!"
+/>
+<Sentence
+  speaker="学生"
+  hz="星期二见！"
+  py="Xuéshēng: Xīngqī'èr jiàn!"
+  es="¡Hasta el martes!"
+/>
 
 ## 💡 Fonética y Notas Útiles
 

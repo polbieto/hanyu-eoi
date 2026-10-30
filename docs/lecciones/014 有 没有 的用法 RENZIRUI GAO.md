@@ -65,13 +65,17 @@ description: "Iniciales palatales j/q/x, reglas ortográficas de i/u/ü e -iu, p
 
 El verbo `有` (*yǒu*) expresa posesión («tener») o existencia («haber»). **Regla de oro del chino:** `有` es el único verbo que **jamás se niega con `不`** (*bù yǒu* es incorrecto); su negación es siempre **`没有`** (*méiyǒu*).
 
-- **Hanzi:** 我有红笔，我没有蓝笔。 <Speak text="我有红笔，我没有蓝笔。"/>
-- **Pinyin:** *Wǒ yǒu hóng bǐ, wǒ méiyǒu lán bǐ.*
-- **Español:** Tengo bolígrafo rojo, no tengo bolígrafo azul.
+<Sentence
+  hz="我有红笔，我没有蓝笔。"
+  py="Wǒ yǒu hóng bǐ, wǒ méiyǒu lán bǐ."
+  es="Tengo bolígrafo rojo, no tengo bolígrafo azul."
+/>
 
-- **Hanzi:** 我没有哥哥。 <Speak text="我没有哥哥。"/>
-- **Pinyin:** *Wǒ méiyǒu gēge.*
-- **Español:** No tengo hermano mayor.
+<Sentence
+  hz="我没有哥哥。"
+  py="Wǒ méiyǒu gēge."
+  es="No tengo hermano mayor."
+/>
 
 ### 2. Cuantificación con clasificador `个` (*gè*) y pregunta con `几` (*jǐ*)
 
@@ -79,17 +83,23 @@ El verbo `有` (*yǒu*) expresa posesión («tener») o existencia («haber»). 
 
 En chino no se une un número directamente al sustantivo: entre el numeral (o el interrogativo `几` *jǐ*, «¿cuántos?») y el nombre debe colocarse un **clasificador**; `个` (*gè*) es el clasificador general más frecuente. Además, para enumerar sustantivos se usa `和` (*hé*, «y»), nunca para unir dos oraciones completas.
 
-- **Hanzi:** 你有几个姐姐？ <Speak text="你有几个姐姐？"/>
-- **Pinyin:** *Nǐ yǒu jǐ gè jiějie?*
-- **Español:** ¿Cuántas hermanas mayores tienes?
+<Sentence
+  hz="你有几个姐姐？"
+  py="Nǐ yǒu jǐ gè jiějie?"
+  es="¿Cuántas hermanas mayores tienes?"
+/>
 
-- **Hanzi:** 我有一个哥哥，一个弟弟和一个妹妹。我没有姐姐。 <Speak text="我有一个哥哥，一个弟弟和一个妹妹。我没有姐姐。"/>
-- **Pinyin:** *Wǒ yǒu yī gè gēge, yī gè dìdi hé yī gè mèimei. Wǒ méiyǒu jiějie.*
-- **Español:** Tengo un hermano mayor, un hermano menor y una hermana menor. No tengo hermana mayor.
+<Sentence
+  hz="我有一个哥哥，一个弟弟和一个妹妹。我没有姐姐。"
+  py="Wǒ yǒu yī gè gēge, yī gè dìdi hé yī gè mèimei. Wǒ méiyǒu jiějie."
+  es="Tengo un hermano mayor, un hermano menor y una hermana menor. No tengo hermana mayor."
+/>
 
-- **Hanzi:** 老师，我有一个问题。 <Speak text="老师，我有一个问题。"/>
-- **Pinyin:** *Lǎoshī, wǒ yǒu yī gè wèntí.*
-- **Español:** Profesor/a, tengo una pregunta.
+<Sentence
+  hz="老师，我有一个问题。"
+  py="Lǎoshī, wǒ yǒu yī gè wèntí."
+  es="Profesor/a, tengo una pregunta."
+/>
 
 ### 3. Expresar destino con `去` (*qù*)
 
@@ -97,50 +107,88 @@ En chino no se une un número directamente al sustantivo: entre el numeral (o el
 
 El verbo `去` (*qù*, ir) se conecta directamente con el sustantivo de lugar sin preposición intermedia.
 
-- **Hanzi:** 你去教室吗？ <Speak text="你去教室吗？"/> ——我去。 <Speak text="我去。"/> / 我不去。 <Speak text="我不去。"/>
-- **Pinyin:** *Nǐ qù jiàoshì ma? — Wǒ qù. / Wǒ bù qù.*
-- **Español:** ¿Vas al aula? — Sí voy. / No voy.
+<Sentence
+  hz="你去教室吗？——我去。 / 我不去。"
+  py="Nǐ qù jiàoshì ma? — Wǒ qù. / Wǒ bù qù."
+  es="¿Vas al aula? — Sí voy. / No voy."
+/>
 
 ## 💬 Diálogos Clave
 
 ### Diálogo 1: Saludar y preguntar por terceros (`问候别人`)
-- **林娜:** 陆雨平，你好吗？ <Speak text="陆雨平，你好吗？"/>  
-  *Lín Nà: Lù Yǔpíng, nǐ hǎo ma?*  
-  Lu Yuping, ¿cómo estás?  
-- **陆雨平:** 我很好。你爸爸、妈妈好吗？ <Speak text="我很好。你爸爸、妈妈好吗？"/>  
-  *Lù Yǔpíng: Wǒ hěn hǎo. Nǐ bàba, māma hǎo ma?*  
-  Estoy muy bien. ¿Qué tal están tu padre y tu madre?  
-- **林娜:** 他们都很好。你忙吗？ <Speak text="他们都很好。你忙吗？"/>  
-  *Lín Nà: Tāmen dōu hěn hǎo. Nǐ máng ma?*  
-  Ellos están todos muy bien. ¿Estás ocupado?  
-- **陆雨平:** 我不忙。你男朋友呢？ <Speak text="我不忙。你男朋友呢？"/>  
-  *Lù Yǔpíng: Wǒ bù máng. Nǐ nánpéngyou ne?*  
-  No estoy ocupado. ¿Y tu novio?  
-- **林娜:** 他很忙。 <Speak text="他很忙。"/>  
-  *Lín Nà: Tā hěn máng.*  
-  Él está muy ocupado.
+
+<Sentence
+  speaker="林娜"
+  hz="陆雨平，你好吗？"
+  py="Lín Nà: Lù Yǔpíng, nǐ hǎo ma?"
+  es="Lu Yuping, ¿cómo estás?"
+/>
+<Sentence
+  speaker="陆雨平"
+  hz="我很好。你爸爸、妈妈好吗？"
+  py="Lù Yǔpíng: Wǒ hěn hǎo. Nǐ bàba, māma hǎo ma?"
+  es="Estoy muy bien. ¿Qué tal están tu padre y tu madre?"
+/>
+<Sentence
+  speaker="林娜"
+  hz="他们都很好。你忙吗？"
+  py="Lín Nà: Tāmen dōu hěn hǎo. Nǐ máng ma?"
+  es="Ellos están todos muy bien. ¿Estás ocupado?"
+/>
+<Sentence
+  speaker="陆雨平"
+  hz="我不忙。你男朋友呢？"
+  py="Lù Yǔpíng: Wǒ bù máng. Nǐ nánpéngyou ne?"
+  es="No estoy ocupado. ¿Y tu novio?"
+/>
+<Sentence
+  speaker="林娜"
+  hz="他很忙。"
+  py="Lín Nà: Tā hěn máng."
+  es="Él está muy ocupado."
+/>
 
 ### Diálogo 2: Preguntar qué se desea tomar (`问需要`)
-- **丁力波:** 哥哥，你要咖啡吗？ <Speak text="哥哥，你要咖啡吗？"/>  
-  *Dīng Lìbō: Gēge, nǐ yào kāfēi ma?*  
-  Hermano mayor, ¿quieres café?  
-- **哥哥:** 我要咖啡。 <Speak text="我要咖啡。"/>  
-  *Gēge: Wǒ yào kāfēi.*  
-  Quiero café.  
-- **弟弟:** 我也要咖啡。 <Speak text="我也要咖啡。"/>  
-  *Dìdi: Wǒ yě yào kāfēi.*  
-  Yo también quiero café.  
-- **丁力波:** 好，我们都喝咖啡。 <Speak text="好，我们都喝咖啡。"/>  
-  *Dīng Lìbō: Hǎo, wǒmen dōu hē kāfēi.*  
-  Vale, todos tomamos café.
+
+<Sentence
+  speaker="丁力波"
+  hz="哥哥，你要咖啡吗？"
+  py="Dīng Lìbō: Gēge, nǐ yào kāfēi ma?"
+  es="Hermano mayor, ¿quieres café?"
+/>
+<Sentence
+  speaker="哥哥"
+  hz="我要咖啡。"
+  py="Gēge: Wǒ yào kāfēi."
+  es="Quiero café."
+/>
+<Sentence
+  speaker="弟弟"
+  hz="我也要咖啡。"
+  py="Dìdi: Wǒ yě yào kāfēi."
+  es="Yo también quiero café."
+/>
+<Sentence
+  speaker="丁力波"
+  hz="好，我们都喝咖啡。"
+  py="Dīng Lìbō: Hǎo, wǒmen dōu hē kāfēi."
+  es="Vale, todos tomamos café."
+/>
 
 ### Diálogo 3: Preguntar dudas en clase
-- **Profesor:** 有问题吗？ <Speak text="有问题吗？"/>  
-  *Yǒu wèntí ma?*  
-  ¿Hay alguna pregunta?  
-- **Alumno:** 有，老师，我有一个问题。 <Speak text="有，老师，我有一个问题。"/> / 没有。 <Speak text="没有。"/>  
-  *Yǒu, lǎoshī, wǒ yǒu yī gè wèntí. / Méiyǒu.*  
-  Sí, profesor/a, tengo una pregunta. / No hay ninguna.
+
+<Sentence
+  speaker="Profesor"
+  hz="有问题吗？"
+  py="Yǒu wèntí ma?"
+  es="¿Hay alguna pregunta?"
+/>
+<Sentence
+  speaker="Alumno"
+  hz="有，老师，我有一个问题。 / 没有。"
+  py="Yǒu, lǎoshī, wǒ yǒu yī gè wèntí. / Méiyǒu."
+  es="Sí, profesor/a, tengo una pregunta. / No hay ninguna."
+/>
 
 ## 💡 Fonética y Notas Útiles
 

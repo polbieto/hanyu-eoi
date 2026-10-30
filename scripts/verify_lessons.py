@@ -36,6 +36,12 @@ def main() -> int:
         for m in re.finditer(r"\*([^*]+)\*", text):
             if re.search(r"[a-zA-ZüÜ][1-5]\b", m.group(1)):
                 errors.append(f"{md.name}: pinyin numérico en *{m.group(1)}*")
+        for m in re.finditer(r'\bpy="([^"]+)"', text):
+            if re.search(r"[a-zA-ZüÜ][1-5]\b", m.group(1)):
+                errors.append(f'{md.name}: pinyin numérico en py="{m.group(1)}"')
+        for lineno, line in enumerate(text.splitlines(), 1):
+            if re.search(r"^\s*[-*+]\s+[-*+]\s", line):
+                errors.append(f"{md.name}:{lineno}: doble viñeta accidental ({line.strip()})")
 
     print(f"Revisadas {len(files)} lecciones.")
     for e in errors:

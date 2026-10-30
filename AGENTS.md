@@ -16,13 +16,13 @@ Cada archivo de lección en `docs/lecciones/` (excepto `index.md`) debe cumplir 
 4. **Caracteres CJK estándar**: no usar radicales Kangxi ni variantes de compatibilidad (`U+2E80–U+2FDF`, `U+F900–U+FAFF`).
 5. **Índice**: al añadir una nueva lección en `docs/lecciones/`, añadir también su enlace en `docs/lecciones/index.md` (el menú lateral de VitePress se genera automáticamente en `docs/.vitepress/config.mts`).
 
-## Uso obligatorio del componente `<Speak />` en las lecciones Markdown
+## Uso obligatorio de `<Speak />` y `<Sentence />` en las lecciones Markdown
 
-El componente Vue `<Speak />` (`docs/.vitepress/theme/components/Speak.vue`) está registrado globalmente en VitePress y reproduce audio en mandarín (`zh-CN`) mediante la Web Speech API nativa. Acepta las props `text` (requerida), `rate` (opcional, por defecto `0.9`) y `pitch` (opcional, por defecto `1.0`).
+Los componentes Vue `<Speak />` (`docs/.vitepress/theme/components/Speak.vue`) y `<Sentence />` (`docs/.vitepress/theme/components/Sentence.vue`) están registrados globalmente en VitePress y reproducen audio en mandarín (`zh-CN`) mediante la Web Speech API nativa (`docs/.vitepress/theme/composables/useSpeech.ts`).
 
-Al crear o editar cualquier lección en `docs/lecciones/*.md`, incluye `<Speak />` en los siguientes lugares:
+Al crear o editar cualquier lección en `docs/lecciones/*.md`:
 
-1. **Tablas de vocabulario y tablas de frases/derivación**:
+1. **Tablas de vocabulario y tablas de frases/derivación → usar `<Speak />`**:
    - **Columna Hanzi**: colocar `<Speak />` justo después del término en negrita:
      ```markdown
      | **你好** <Speak text="你好"/> | *nǐ hǎo* | Expr. | Hola | 你好！ <Speak text="你好！"/> (¡Hola!) |
@@ -31,28 +31,29 @@ Al crear o editar cualquier lección en `docs/lecciones/*.md`, incluye `<Speak /
      - Si tienen **pronunciación distinta**, añadir un `<Speak />` a cada variante: `**汉语** <Speak text="汉语"/> / **中文** <Speak text="中文"/>`.
      - Si son **homófonos exactos**, usar un único botón al final con la primera grafía: `**他 / 她 / 它** <Speak text="他"/>`.
    - **Columna de frase de ejemplo**: colocar `<Speak />` entre la frase en chino y la traducción entre paréntesis.
+   - Pasar únicamente Hanzi en `text="..."` (sin pinyin, traducción, `/` ni `——`).
 
-2. **Ejemplos en `Estructuras Gramaticales y Patrones`**:
-   - Añadir `<Speak />` al final de cada línea `- **Hanzi:**`:
-     ```markdown
-     - **Hanzi:** 我是学生。 <Speak text="我是学生。"/>
-     - **Pinyin:** *Wǒ shì xuéshēng.*
-     - **Español:** Yo soy estudiante.
+2. **Frases de ejemplo en `Estructuras Gramaticales y Patrones` → usar `<Sentence />`**:
+   - No aplicar a títulos, notas teóricas ni fórmulas gramaticales (`> **Fórmula:** ...`), que deben permanecer en Markdown estándar.
+   - Dejar una línea en blanco antes y después de cada bloque `<Sentence />`:
+     ```vue
+     <Sentence
+       hz="我是学生。"
+       py="Wǒ shì xuéshēng."
+       es="Yo soy estudiante."
+     />
      ```
 
-3. **Intervenciones en `Diálogos Clave`**:
-   - Añadir `<Speak />` al final de la línea en chino de cada intervención, **manteniendo siempre los dos espacios finales (`  `) detrás de `/>`** para preservar el salto de línea (`<br>`) antes del pinyin:
-     ```markdown
-     - **A:** 你好！ <Speak text="你好！"/>  
-       *Nǐ hǎo!*  
-       ¡Hola!
+3. **Intervenciones en `Diálogos Clave` (y diálogos adicionales) → usar `<Sentence speaker="..." />`**:
+   - Usar la prop `speaker` para identificar al interlocutor:
+     ```vue
+     <Sentence
+       speaker="A"
+       hz="你好！"
+       py="Nǐ hǎo!"
+       es="¡Hola!"
+     />
      ```
-
-4. **Limpieza del atributo `text` para síntesis de voz (`zh-CN`)**:
-   - Pasar únicamente el texto en caracteres chinos (Hanzi), nunca el pinyin ni la traducción en español.
-   - **No incluir nunca `/` ni `——` dentro de `text="..."`** (el sintetizador lee `/` como *«斜杠»*):
-     - En pares pregunta-respuesta unidos por raya (`——`), omitir `——` dentro de `text`: `- **Hanzi:** 你是哪国人？——我是中国人。 <Speak text="你是哪国人？我是中国人。"/>`.
-     - Cuando una línea ofrezca dos frases alternativas separadas por ` / `, colocar un `<Speak />` independiente detrás de cada opción: `早上好！ <Speak text="早上好！"/> / 早！ <Speak text="早！"/>`.
 
 ## Verificación antes de finalizar cambios
 

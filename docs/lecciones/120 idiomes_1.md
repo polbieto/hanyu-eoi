@@ -45,13 +45,17 @@ description: "Sistema completo para formar gentilicios y nombres de idiomas habl
 | **意大利** <Speak text="意大利"/> (*Yìdàlì*) | **意大利人** <Speak text="意大利人"/> (*Yìdàlìrén*) | **意大利语** <Speak text="意大利语"/> (*Yìdàlìyǔ*) | **意大利文** <Speak text="意大利文"/> (*Yìdàlìwén*) |
 | **法国** <Speak text="法国"/> (*Fǎguó*) | **法国人** <Speak text="法国人"/> (*Fǎguórén*) | **法语** <Speak text="法语"/> (*Fǎyǔ*) | **法文** <Speak text="法文"/> (*Fǎwén*) |
 
-- **Hanzi:** 他是美国人，他说英语。 <Speak text="他是美国人，他说英语。"/>
-- **Pinyin:** *Tā shì Měiguórén, tā shuō Yīngyǔ.*
-- **Español:** Él es estadounidense y habla inglés.
+<Sentence
+  hz="他是美国人，他说英语。"
+  py="Tā shì Měiguórén, tā shuō Yīngyǔ."
+  es="Él es estadounidense y habla inglés."
+/>
 
-- **Hanzi:** 她是俄罗斯人，她说俄语。 <Speak text="她是俄罗斯人，她说俄语。"/>
-- **Pinyin:** *Tā shì Éluósīrén, tā shuō Éyǔ.*
-- **Español:** Ella es rusa y habla ruso.
+<Sentence
+  hz="她是俄罗斯人，她说俄语。"
+  py="Tā shì Éluósīrén, tā shuō Éyǔ."
+  es="Ella es rusa y habla ruso."
+/>
 
 ### 2. Preguntas cerradas con verbos de acción (`学习`, `说`, `认识`) + `吗`
 
@@ -61,41 +65,64 @@ description: "Sistema completo para formar gentilicios y nombres de idiomas habl
 
 Los verbos de acción habituales en presente o verdad general se niegan anteponiendo **`不`** (*bù*) directamente al verbo (`不学习`, `不说`, `不认识`).
 
-- **Hanzi:** 你学习英语吗？ <Speak text="你学习英语吗？"/> ——我学习英语。 <Speak text="我学习英语。"/> / 我不学习英语。 <Speak text="我不学习英语。"/>
-- **Pinyin:** *Nǐ xuéxí Yīngyǔ ma? — Wǒ xuéxí Yīngyǔ. / Wǒ bù xuéxí Yīngyǔ.*
-- **Español:** ¿Estudias inglés? — Estudio inglés. / No estudio inglés.
+<Sentence
+  hz="你学习英语吗？——我学习英语。 / 我不学习英语。"
+  py="Nǐ xuéxí Yīngyǔ ma? — Wǒ xuéxí Yīngyǔ. / Wǒ bù xuéxí Yīngyǔ."
+  es="¿Estudias inglés? — Estudio inglés. / No estudio inglés."
+/>
 
-- **Hanzi:** 你说韩语吗？ <Speak text="你说韩语吗？"/> ——我说韩语。 <Speak text="我说韩语。"/> / 我不说韩语。 <Speak text="我不说韩语。"/>
-- **Pinyin:** *Nǐ shuō Hányǔ ma? — Wǒ shuō Hányǔ. / Wǒ bù shuō Hányǔ.*
-- **Español:** ¿Hablas coreano? — Hablo coreano. / No hablo coreano.
+<Sentence
+  hz="你说韩语吗？——我说韩语。 / 我不说韩语。"
+  py="Nǐ shuō Hányǔ ma? — Wǒ shuō Hányǔ. / Wǒ bù shuō Hányǔ."
+  es="¿Hablas coreano? — Hablo coreano. / No hablo coreano."
+/>
 
-- **Hanzi:** 你认识王老师吗？ <Speak text="你认识王老师吗？"/> ——我认识王老师。 <Speak text="我认识王老师。"/> / 我不认识王老师。 <Speak text="我不认识王老师。"/>
-- **Pinyin:** *Nǐ rènshi Wáng lǎoshī ma? — Wǒ rènshi Wáng lǎoshī. / Wǒ bù rènshi Wáng lǎoshī.*
-- **Español:** ¿Conoces al profesor Wang? — Conozco al profesor Wang. / No conozco al profesor Wang.
+<Sentence
+  hz="你认识王老师吗？——我认识王老师。 / 我不认识王老师。"
+  py="Nǐ rènshi Wáng lǎoshī ma? — Wǒ rènshi Wáng lǎoshī. / Wǒ bù rènshi Wáng lǎoshī."
+  es="¿Conoces al profesor Wang? — Conozco al profesor Wang. / No conozco al profesor Wang."
+/>
 
 ## 💬 Diálogos Clave
 
 ### Entrevista entre compañeros (`互相提问`)
-- **A:** 你学习英语吗？ <Speak text="你学习英语吗？"/>  
-  *Nǐ xuéxí Yīngyǔ ma?*  
-  ¿Estudias inglés?  
-- **B:** 我不学习英语，我学习汉语。 <Speak text="我不学习英语，我学习汉语。"/>  
-  *Wǒ bù xuéxí Yīngyǔ, wǒ xuéxí Hànyǔ.*  
-  No estudio inglés, estudio chino.
 
-- **A:** 你说韩语吗？ <Speak text="你说韩语吗？"/>  
-  *Nǐ shuō Hányǔ ma?*  
-  ¿Hablas coreano?  
-- **B:** 我不说韩语，我说西班牙语和法语。 <Speak text="我不说韩语，我说西班牙语和法语。"/>  
-  *Wǒ bù shuō Hányǔ, wǒ shuō Xībānyáyǔ hé Fǎyǔ.*  
-  No hablo coreano; hablo español y francés.
-
-- **A:** 你认识王老师吗？ <Speak text="你认识王老师吗？"/>  
-  *Nǐ rènshi Wáng lǎoshī ma?*  
-  ¿Conoces al profesor Wang?  
-- **B:** 我认识王老师。 <Speak text="我认识王老师。"/>  
-  *Wǒ rènshi Wáng lǎoshī.*  
-  Sí, conozco al profesor Wang.
+<Sentence
+  speaker="A"
+  hz="你学习英语吗？"
+  py="Nǐ xuéxí Yīngyǔ ma?"
+  es="¿Estudias inglés?"
+/>
+<Sentence
+  speaker="B"
+  hz="我不学习英语，我学习汉语。"
+  py="Wǒ bù xuéxí Yīngyǔ, wǒ xuéxí Hànyǔ."
+  es="No estudio inglés, estudio chino."
+/>
+<Sentence
+  speaker="A"
+  hz="你说韩语吗？"
+  py="Nǐ shuō Hányǔ ma?"
+  es="¿Hablas coreano?"
+/>
+<Sentence
+  speaker="B"
+  hz="我不说韩语，我说西班牙语和法语。"
+  py="Wǒ bù shuō Hányǔ, wǒ shuō Xībānyáyǔ hé Fǎyǔ."
+  es="No hablo coreano; hablo español y francés."
+/>
+<Sentence
+  speaker="A"
+  hz="你认识王老师吗？"
+  py="Nǐ rènshi Wáng lǎoshī ma?"
+  es="¿Conoces al profesor Wang?"
+/>
+<Sentence
+  speaker="B"
+  hz="我认识王老师。"
+  py="Wǒ rènshi Wáng lǎoshī."
+  es="Sí, conozco al profesor Wang."
+/>
 
 ## 💡 Fonética y Notas Útiles
 

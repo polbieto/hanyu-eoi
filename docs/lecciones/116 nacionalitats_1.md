@@ -31,13 +31,17 @@ description: "Cómo preguntar y confirmar la nacionalidad con 哪国人 y 吗, n
 
 Para preguntar de qué país es alguien se coloca el interrogativo `哪国人` (*nǎ guó rén*, lit. «persona de qué país») en el mismo lugar de la oración donde irá la nacionalidad en la respuesta, manteniendo intacto el orden `Sujeto + Verbo + Objeto`.
 
-- **Hanzi:** 你是哪国人？——我是中国人。 <Speak text="你是哪国人？我是中国人。"/>
-- **Pinyin:** *Nǐ shì nǎ guó rén? — Wǒ shì Zhōngguórén.*
-- **Español:** ¿De qué país eres? — Soy chino/a.
+<Sentence
+  hz="你是哪国人？——我是中国人。"
+  py="Nǐ shì nǎ guó rén? — Wǒ shì Zhōngguórén."
+  es="¿De qué país eres? — Soy chino/a."
+/>
 
-- **Hanzi:** 他是哪国人？——他是西班牙人。 <Speak text="他是哪国人？他是西班牙人。"/>
-- **Pinyin:** *Tā shì nǎ guó rén? — Tā shì Xībānyárén.*
-- **Español:** ¿De qué nacionalidad es él? — Él es español.
+<Sentence
+  hz="他是哪国人？——他是西班牙人。"
+  py="Tā shì nǎ guó rén? — Tā shì Xībānyárén."
+  es="¿De qué nacionalidad es él? — Él es español."
+/>
 
 ### 2. Confirmar o negar la nacionalidad (`是...吗？` → `是` / `不是`)
 
@@ -46,45 +50,73 @@ Para preguntar de qué país es alguien se coloca el interrogativo `哪国人` (
 
 Cuando nos preguntan por una nacionalidad concreta con `吗` (*ma*), se responde afirmativamente con `是` (*shì*) y negativamente con `不是` (*bù shì*).
 
-- **Hanzi:** 你是西班牙人吗？——是，我是西班牙人。 <Speak text="你是西班牙人吗？是，我是西班牙人。"/>
-- **Pinyin:** *Nǐ shì Xībānyárén ma? — Shì, wǒ shì Xībānyárén.*
-- **Español:** ¿Eres español/a? — Sí, soy español/a.
+<Sentence
+  hz="你是西班牙人吗？——是，我是西班牙人。"
+  py="Nǐ shì Xībānyárén ma? — Shì, wǒ shì Xībānyárén."
+  es="¿Eres español/a? — Sí, soy español/a."
+/>
 
-- **Hanzi:** 你是中国人吗？——不是，我不是中国人，我是意大利人。 <Speak text="你是中国人吗？不是，我不是中国人，我是意大利人。"/>
-- **Pinyin:** *Nǐ shì Zhōngguórén ma? — Bù shì, wǒ bù shì Zhōngguórén, wǒ shì Yìdàlìrén.*
-- **Español:** ¿Eres chino/a? — No, no soy chino/a, soy italiano/a.
+<Sentence
+  hz="你是中国人吗？——不是，我不是中国人，我是意大利人。"
+  py="Nǐ shì Zhōngguórén ma? — Bù shì, wǒ bù shì Zhōngguórén, wǒ shì Yìdàlìrén."
+  es="¿Eres chino/a? — No, no soy chino/a, soy italiano/a."
+/>
 
 ## 💬 Diálogos Clave
 
 ### Preguntar y responder la nacionalidad
-- **A:** 你是哪国人？ <Speak text="你是哪国人？"/>  
-  *Nǐ shì nǎ guó rén?*  
-  ¿De qué país eres?  
-- **B:** 我是西班牙人。 <Speak text="我是西班牙人。"/>  
-  *Wǒ shì Xībānyárén.*  
-  Soy español/a.
 
-- **A:** 他是哪国人？ <Speak text="他是哪国人？"/>  
-  *Tā shì nǎ guó rén?*  
-  ¿De qué país es él?  
-- **B:** 他是法国人。 <Speak text="他是法国人。"/>  
-  *Tā shì Fǎguórén.*  
-  Él es francés.
+<Sentence
+  speaker="A"
+  hz="你是哪国人？"
+  py="Nǐ shì nǎ guó rén?"
+  es="¿De qué país eres?"
+/>
+<Sentence
+  speaker="B"
+  hz="我是西班牙人。"
+  py="Wǒ shì Xībānyárén."
+  es="Soy español/a."
+/>
+<Sentence
+  speaker="A"
+  hz="他是哪国人？"
+  py="Tā shì nǎ guó rén?"
+  es="¿De qué país es él?"
+/>
+<Sentence
+  speaker="B"
+  hz="他是法国人。"
+  py="Tā shì Fǎguórén."
+  es="Él es francés."
+/>
 
 ### Confirmar y corregir con `是` y `不是`
-- **A:** 你是西班牙人吗？ <Speak text="你是西班牙人吗？"/>  
-  *Nǐ shì Xībānyárén ma?*  
-  ¿Eres español/a?  
-- **B:** 是，我是西班牙人。 <Speak text="是，我是西班牙人。"/>  
-  *Shì, wǒ shì Xībānyárén.*  
-  Sí, soy español/a.
 
-- **A:** 你是中国人吗？ <Speak text="你是中国人吗？"/>  
-  *Nǐ shì Zhōngguórén ma?*  
-  ¿Eres chino/a?  
-- **B:** 不是，我不是中国人，我是意大利人。 <Speak text="不是，我不是中国人，我是意大利人。"/>  
-  *Bù shì, wǒ bù shì Zhōngguórén, wǒ shì Yìdàlìrén.*  
-  No, no soy chino/a, soy italiano/a.
+<Sentence
+  speaker="A"
+  hz="你是西班牙人吗？"
+  py="Nǐ shì Xībānyárén ma?"
+  es="¿Eres español/a?"
+/>
+<Sentence
+  speaker="B"
+  hz="是，我是西班牙人。"
+  py="Shì, wǒ shì Xībānyárén."
+  es="Sí, soy español/a."
+/>
+<Sentence
+  speaker="A"
+  hz="你是中国人吗？"
+  py="Nǐ shì Zhōngguórén ma?"
+  es="¿Eres chino/a?"
+/>
+<Sentence
+  speaker="B"
+  hz="不是，我不是中国人，我是意大利人。"
+  py="Bù shì, wǒ bù shì Zhōngguórén, wǒ shì Yìdàlìrén."
+  es="No, no soy chino/a, soy italiano/a."
+/>
 
 ## 💡 Fonética y Notas Útiles
 
