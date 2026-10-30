@@ -335,9 +335,10 @@ function handleQuiz() {
   quizCompleted.value = false
   feedbackMessage.value = ''
 
-  writerInstance.showOutline()
+  writerInstance.hideOutline()
   writerInstance.hideCharacter({ duration: 150 })
   writerInstance.quiz({
+    showOutline: false,
     leniency: 1.1,
     showHintAfterMisses: 3,
     highlightOnComplete: true,
