@@ -156,33 +156,21 @@ El verbo copulativo `是` (*shì*) sirve por igual para identificar profesión (
 
 ## 🗒️ Notas de Clase (27 de octubre)
 
-En la sesión del **27 de octubre** practicamos oralmente una batería completa de preguntas personales, introduciendo el verbo **`姓`** (*xìng*) y el verbo modal **`会`** (*huì*), además de retomar y contrastar los pronombres interrogativos **`什么`** (*shénme*) y **`哪`** (*nǎ*).
+Práctica oral de presentación personal con **`姓`** (*xìng*), **`会`** (*huì*) y **`语言`** (*yǔyán*), repasando el contraste entre **`什么`** (*shénme*) y **`哪`** (*nǎ*).
 
-### Vocabulario introducido en la sesión
+### Vocabulario de la sesión
 
 | Hanzi | Pinyin | Categoría | Significado (ES) | Frase corta de ejemplo |
 | :---: | :---: | :---: | :--- | :--- |
 | **姓** <Speak text="姓"/> | *xìng* | Verbo / Sust. | Apellidarse / apellido | 你姓什么？ <Speak text="你姓什么？"/> (¿Cómo te apellidas?) |
 | **会** <Speak text="会"/> | *huì* | Verbo modal | Saber (habilidad aprendida) | 我会说汉语 <Speak text="我会说汉语"/> (Sé hablar chino) |
-| **不会** <Speak text="不会"/> | *bù huì* | Verbo neg. | No saber (hacer algo) | 我不会说日语 <Speak text="我不会说日语"/> (No sé hablar japonés) |
 | **语言** <Speak text="语言"/> | *yǔyán* | Sust. | Idioma / lengua | 你会说什么语言？ <Speak text="你会说什么语言？"/> (¿Qué idioma sabes hablar?) |
 
-### Frases clave practicadas en clase
+### 1. El verbo modal `会` (*huì*): habilidades aprendidas
 
-| Pregunta (Hanzi) | Pinyin | Significado (ES) | Respuesta modelo |
-| :--- | :--- | :--- | :--- |
-| **你叫什么名字？** <Speak text="你叫什么名字？"/> | *Nǐ jiào shénme míngzi?* | ¿Cómo te llamas? | 我叫大卫。 <Speak text="我叫大卫。"/> (*Wǒ jiào Dàwèi.*) |
-| **你姓什么？** <Speak text="你姓什么？"/> | *Nǐ xìng shénme?* | ¿Cómo te apellidas? | 我姓李。 <Speak text="我姓李。"/> (*Wǒ xìng Lǐ.*) |
-| **你是哪国人？** <Speak text="你是哪国人？"/> | *Nǐ shì nǎ guó rén?* | ¿De qué país eres? | 我是西班牙人。 <Speak text="我是西班牙人。"/> (*Wǒ shì Xībānyárén.*) |
-| **你会说什么语言？** <Speak text="你会说什么语言？"/> | *Nǐ huì shuō shénme yǔyán?* | ¿Qué idioma(s) sabes hablar? | 我会说西班牙语和英语。 <Speak text="我会说西班牙语和英语。"/> (*Wǒ huì shuō Xībānyáyǔ hé Yīngyǔ.*) |
+> **Fórmula:** [Sujeto] + **会 / 不会** + 说 + [Idioma / 什么语言]
 
-### 1. El verbo modal `会` (*huì*): habilidades aprendidas (idiomas)
-
-> **Afirmativa:** [Sujeto] + **会** + 说 + [Idioma]。  
-> **Negativa:** [Sujeto] + **不会** + 说 + [Idioma]。  
-> **Pregunta abierta:** [Sujeto] + **会** + 说 + **什么语言**？
-
-Mientras que en la Lección 1.4 decíamos `我说汉语` (*Wǒ shuō Hànyǔ*, «hablo chino»), anteponer el verbo modal **`会`** (*huì*) indica **competencia o habilidad adquirida mediante estudio o práctica** («*saber* hablar un idioma»). Se niega con **`不会`** (*bù huì*) y en preguntas cerradas con `吗` admite respuesta corta (`会` / `不会`).
+Anteponer **`会`** (*huì*) indica una habilidad adquirida mediante estudio («*saber* hablar un idioma»), frente al simple `我说汉语` («hablo chino»). Se niega con **`不会`** (*bù huì*).
 
 <Sentence
   hz="你会说什么语言？——我会说西班牙语、英语和汉语。"
@@ -196,12 +184,12 @@ Mientras que en la Lección 1.4 decíamos `我说汉语` (*Wǒ shuō Hànyǔ*, �
   es="¿Sabes hablar coreano? — No, no sé hablar coreano."
 />
 
-### 2. Preguntar el apellido (`姓`) frente al nombre (`叫`)
+### 2. Apellido (`姓`) frente a nombre (`叫`)
 
-> **Apellido:** 你**姓**什么？ → 我**姓** + [Apellido]。  
-> **Nombre:** 你**叫**什么名字？ → 我**叫** + [Nombre completo / Nombre de pila]。
+> **Apellido:** 你**姓**什么？ → 我**姓** + [Apellido]  
+> **Nombre:** 你**叫**什么名字？ → 我**叫** + [Nombre]
 
-En chino **`姓`** (*xìng*) funciona directamente como verbo («apellidarse»), por lo que va seguido solo de `什么` (**sin** `名字`). Recuerda además que en los nombres chinos el **apellido va siempre delante** del nombre de pila (como en `李明河` *Lǐ Mínghé*, visto arriba).
+**`姓`** (*xìng*) actúa como verbo («apellidarse») y va seguido solo de `什么` (sin `名字`). En chino, el apellido va siempre delante del nombre de pila (`李明河` *Lǐ Mínghé*).
 
 <Sentence
   hz="他姓什么？他叫什么名字？——他姓李，他叫李明河。"
@@ -209,17 +197,14 @@ En chino **`姓`** (*xìng*) funciona directamente como verbo («apellidarse»),
   es="¿Cómo se apellida él? ¿Cómo se llama? — Se apellida Li; se llama Li Minghe."
 />
 
-### 3. Volviendo a `什么` (*shénme*) y `哪` (*nǎ*): repaso contrastivo
+### 3. Repaso: `什么` (*shénme*) vs. `哪` (*nǎ*)
 
-En las cuatro frases practicadas se observa claramente cómo funcionan ambos interrogativos **sin alterar el orden `Sujeto + Verbo + Objeto`** y **sin llevar nunca la partícula `吗`**:
+Ambos mantienen el orden `Sujeto + Verbo + Objeto` y **nunca llevan `吗`**:
 
-- **`什么`** (*shénme*, «¿qué? / ¿cuál?» — **pregunta abierta**):
-  - **Solo tras el verbo** (sustituye a todo el objeto): `你姓什么？` (*Nǐ xìng shénme?*, lit. «¿Tú te apellidas qué?»).
-  - **Delante de un sustantivo** (especifica la categoría): `你叫什么名字？` (*shénme míngzi*, «¿qué nombre?»), `你会说什么语言？` (*shénme yǔyán*, «¿qué idioma?»).
-- **`哪`** (*nǎ*, «¿cuál / qué [de entre un conjunto]?» — **pregunta selectiva**):
-  - No aparece solo detrás del verbo, sino unido a un sustantivo o clasificador como `国` («país»): `你是哪国人？` (*nǎ guó rén*, «¿persona de qué país?»), o al sufijo locativo `儿` en `你是哪儿人？` (*nǎr rén*, «¿persona de dónde / de qué ciudad?»).
+- **`什么`** (*shénme*, «¿qué?», pregunta abierta): va solo tras el verbo (`你姓什么？`) o delante de un sustantivo (`你叫什么名字？`, `你会说什么语言？`).
+- **`哪`** (*nǎ*, «¿cuál / qué?», pregunta selectiva): se une a un sustantivo/clasificador (`你是哪国人？`) o al sufijo locativo `儿` (`你是哪儿人？`).
 
-### Diálogo integrador de clase
+### Diálogo de clase
 
 <Sentence
   speaker="A"
@@ -241,27 +226,21 @@ En las cuatro frases practicadas se observa claramente cómo funcionan ambos int
 />
 <Sentence
   speaker="B"
-  hz="我是中国人，我是上海人。你是哪国人？"
-  py="Wǒ shì Zhōngguórén, wǒ shì Shànghǎirén. Nǐ shì nǎ guó rén?"
-  es="Soy chino, de Shanghái. ¿De qué país eres tú?"
+  hz="我是中国人，我是上海人。你呢？"
+  py="Wǒ shì Zhōngguórén, wǒ shì Shànghǎirén. Nǐ ne?"
+  es="Soy chino, de Shanghái. ¿Y tú?"
 />
 <Sentence
   speaker="A"
-  hz="我是西班牙人，我是巴塞罗那人。"
-  py="Wǒ shì Xībānyárén, wǒ shì Bāsàiluónàrén."
-  es="Soy español, de Barcelona."
+  hz="我是西班牙人，我是巴塞罗那人。你会说什么语言？"
+  py="Wǒ shì Xībānyárén, wǒ shì Bāsàiluónàrén. Nǐ huì shuō shénme yǔyán?"
+  es="Soy español, de Barcelona. ¿Qué idiomas sabes hablar?"
 />
 <Sentence
   speaker="B"
-  hz="你会说什么语言？"
-  py="Nǐ huì shuō shénme yǔyán?"
-  es="¿Qué idiomas sabes hablar?"
-/>
-<Sentence
-  speaker="A"
-  hz="我会说西班牙语、英语和汉语。"
-  py="Wǒ huì shuō Xībānyáyǔ, Yīngyǔ hé Hànyǔ."
-  es="Sé hablar español, inglés y chino."
+  hz="我会说汉语和英语。"
+  py="Wǒ huì shuō Hànyǔ hé Yīngyǔ."
+  es="Sé hablar chino e inglés."
 />
 
 
