@@ -18,7 +18,7 @@ Cada archivo de lección en `docs/lecciones/` (excepto `index.md`) debe cumplir 
 
 ## Uso obligatorio de `<Speak />` y `<Sentence />` en las lecciones Markdown
 
-Los componentes Vue `<Speak />` (`docs/.vitepress/theme/components/Speak.vue`) y `<Sentence />` (`docs/.vitepress/theme/components/Sentence.vue`) están registrados globalmente en VitePress y reproducen audio en mandarín (`zh-CN`) mediante la Web Speech API nativa (`docs/.vitepress/theme/composables/useSpeech.ts`).
+Los componentes Vue `<Speak />` (`docs/.vitepress/theme/components/Speak.vue`) y `<Sentence />` (`docs/.vitepress/theme/components/Sentence.vue`) están registrados globalmente en VitePress: reproducen audio en mandarín (`zh-CN`) mediante la Web Speech API nativa (`docs/.vitepress/theme/composables/useSpeech.ts`) e incluyen a su lado el botón de práctica de escritura palabra/frase (`docs/.vitepress/theme/components/StrokeModal.vue` + `docs/.vitepress/theme/composables/useStrokeModal.ts`).
 
 Al crear o editar cualquier lección en `docs/lecciones/*.md`:
 
@@ -29,7 +29,7 @@ Al crear o editar cualquier lección en `docs/lecciones/*.md`:
      ```
    - **Variantes con `/`**:
      - Si tienen **pronunciación distinta**, añadir un `<Speak />` a cada variante: `**汉语** <Speak text="汉语"/> / **中文** <Speak text="中文"/>`.
-     - Si son **homófonos exactos**, usar un único botón al final con la primera grafía: `**他 / 她 / 它** <Speak text="他"/>`.
+     - Si son **homófonos exactos**, usar un único botón al final con la primera grafía en `text` y todas las grafías en `writeText`: `**他 / 她 / 它** <Speak text="他" writeText="他 / 她 / 它"/>`.
    - **Columna de frase de ejemplo**: colocar `<Speak />` entre la frase en chino y la traducción entre paréntesis.
    - Pasar únicamente Hanzi en `text="..."` (sin pinyin, traducción, `/` ni `——`).
 

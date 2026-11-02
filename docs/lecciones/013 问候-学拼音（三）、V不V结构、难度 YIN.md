@@ -12,7 +12,7 @@ description: "Finales nasales (-n vs. -ng), plural de pronombres con 们, adverb
 | **们** <Speak text="们"/> | *men* | Sufijo | Marca de plural para personas | 我们都很好 <Speak text="我们都很好"/> (Todos estamos muy bien) |
 | **我们** <Speak text="我们"/> | *wǒmen* | Pron. | Nosotros / Nosotras | 我们一起读 <Speak text="我们一起读"/> (Leemos juntos) |
 | **你们** <Speak text="你们"/> | *nǐmen* | Pron. | Vosotros / Ustedes | 你们忙吗？ <Speak text="你们忙吗？"/> (¿Estáis ocupados?) |
-| **他们 / 她们 / 它们** <Speak text="他们"/> | *tāmen* | Pron. | Ellos / Ellas | 他们很好 <Speak text="他们很好"/> (Ellos están muy bien) |
+| **他们 / 她们 / 它们** <Speak text="他们" writeText="他们 / 她们 / 它们"/> | *tāmen* | Pron. | Ellos / Ellas | 他们很好 <Speak text="他们很好"/> (Ellos están muy bien) |
 | **呢** <Speak text="呢"/> | *ne* | Part. | ¿Y...? (pregunta elíptica recíproca) | 我很好，你呢？ <Speak text="我很好，你呢？"/> (Estoy bien, ¿y tú?) |
 | **也** <Speak text="也"/> | *yě* | Adv. | También | 我也很好 <Speak text="我也很好"/> (Yo también estoy muy bien) |
 | **都** <Speak text="都"/> | *dōu* | Adv. | Todos / ambos | 爸爸妈妈都很好 <Speak text="爸爸妈妈都很好"/> (Papá y mamá están bien) |

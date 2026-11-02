@@ -14,8 +14,8 @@ description: "Sistema completo de pronombres personales, diferencia entre 我们
 | **咱们** <Speak text="咱们"/> | *zánmen* | Pron. | Nosotros/as (siempre incluye al oyente) | 咱们一起吃饭 <Speak text="咱们一起吃饭"/> (Comamos juntos tú y yo) |
 | **您** <Speak text="您"/> | *nín* | Pron. | Usted (2.ª pers. sing. cortés) | 您好！ <Speak text="您好！"/> (¡Hola, usted!) |
 | **你们** <Speak text="你们"/> | *nǐmen* | Pron. | Vosotros/as / ustedes | 你们的公司呢？ <Speak text="你们的公司呢？"/> (¿Y vuestra empresa?) |
-| **他 / 她 / 它** <Speak text="他"/> | *tā* | Pron. | Él / ella / ello (cosa o animal) | 他是我的同学 <Speak text="他是我的同学"/> (Él es mi compañero de clase) |
-| **他们 / 她们 / 它们** <Speak text="他们"/> | *tāmen* | Pron. | Ellos / ellas | 他们是谁？ <Speak text="他们是谁？"/> (¿Quiénes son ellos?) |
+| **他 / 她 / 它** <Speak text="他" writeText="他 / 她 / 它"/> | *tā* | Pron. | Él / ella / ello (cosa o animal) | 他是我的同学 <Speak text="他是我的同学"/> (Él es mi compañero de clase) |
+| **他们 / 她们 / 它们** <Speak text="他们" writeText="他们 / 她们 / 它们"/> | *tāmen* | Pron. | Ellos / ellas | 他们是谁？ <Speak text="他们是谁？"/> (¿Quiénes son ellos?) |
 | **一起** <Speak text="一起"/> | *yīqǐ* | Adv. | Juntos / en compañía | 咱们一起吃午饭 <Speak text="咱们一起吃午饭"/> (Almorcemos juntos) |
 | **一块儿** <Speak text="一块儿"/> / **一块** <Speak text="一块"/> | *yīkuàir / yīkuài* | Adv. | Juntos (coloquial) | 咱们一块去 <Speak text="咱们一块去"/> (Vamos juntos) |
 | **吃饭** <Speak text="吃饭"/> | *chīfàn* | Verbo | Comer | 一起吃饭 <Speak text="一起吃饭"/> (Comer juntos) |

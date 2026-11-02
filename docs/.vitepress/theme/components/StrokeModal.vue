@@ -3,8 +3,12 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import type HanziWriterType from 'hanzi-writer'
 import { useSpeech } from '../composables/useSpeech'
+import {
+  HANZI_REGEX,
+  type StrokeModalMode,
+  useStrokeModal
+} from '../composables/useStrokeModal'
 
-const HANZI_REGEX = /[\u4e00-\u9fa5]/
 const LONG_PRESS_MS = 500
 const TOUCH_MOVE_TOLERANCE_PX = 10
 const CHAR_HIT_PADDING_PX = 14
@@ -22,7 +26,9 @@ const EXCLUDED_SELECTOR = [
   '[role="dialog"]',
   '[contenteditable="true"]',
   '.vp-speak-btn',
+  '.vp-write-btn',
   '.vp-sentence-audio',
+  '.vp-sentence-write',
   '.vp-sentence-py',
   '.VPNav',
   '.VPSidebar',
@@ -33,16 +39,36 @@ const EXCLUDED_SELECTOR = [
   '.vp-stroke-backdrop'
 ].join(', ')
 
-type ModalMode = 'animate' | 'quiz'
-
 const { isDark } = useData()
 const route = useRoute()
-const { isSupported: isSpeechSupported, isSpeaking, speak } = useSpeech()
+
+const {
+  isSupported: isSpeechSupported,
+  isSpeaking: isCharSpeaking,
+  speak: speakChar
+} = useSpeech()
+
+const {
+  isSpeaking: isPhraseSpeaking,
+  speak: speakPhrase
+} = useSpeech()
+
+const {
+  isOpen,
+  rawPhrase,
+  hanziChars,
+  activeIndex,
+  activeChar,
+  isPhraseMode,
+  phraseTokens,
+  initialMode,
+  openSession,
+  openStrokeModal,
+  closeStrokeModal
+} = useStrokeModal()
 
 const isClient = ref(false)
-const isOpen = ref(false)
-const activeChar = ref('')
-const mode = ref<ModalMode>('animate')
+const mode = ref<StrokeModalMode>('animate')
 const isLoading = ref(false)
 const loadError = ref(false)
 const totalStrokes = ref(0)
@@ -50,9 +76,11 @@ const currentStroke = ref(0)
 const quizMistakes = ref(0)
 const quizCompleted = ref(false)
 const feedbackMessage = ref('')
+const completedIndices = ref<Set<number>>(new Set())
 
 const writerContainerRef = ref<HTMLElement | null>(null)
 const closeBtnRef = ref<HTMLButtonElement | null>(null)
+const phraseTrackRef = ref<HTMLElement | null>(null)
 
 let writerInstance: HanziWriterType | null = null
 let HanziWriterClass: typeof HanziWriterType | null = null
@@ -64,6 +92,21 @@ let touchStartPoint: { x: number; y: number } | null = null
 let lastTouchTimestamp = 0
 let suppressContextMenuUntil = 0
 let previousActiveElement: HTMLElement | null = null
+
+const hasPrev = computed(() => activeIndex.value > 0)
+const hasNext = computed(() => activeIndex.value < hanziChars.value.length - 1)
+const allPhraseCompleted = computed(
+  () =>
+    isPhraseMode.value &&
+    hanziChars.value.length > 0 &&
+    completedIndices.value.size >= hanziChars.value.length
+)
+
+const headingText = computed(() =>
+  isPhraseMode.value
+    ? `Escribir frase (${activeIndex.value + 1}/${hanziChars.value.length})`
+    : 'Trazos y escritura'
+)
 
 const themePalette = computed(() =>
   isDark.value
@@ -91,6 +134,16 @@ const statusText = computed(() => {
   if (feedbackMessage.value) return feedbackMessage.value
   if (mode.value === 'quiz') {
     if (quizCompleted.value) {
+      if (allPhraseCompleted.value) {
+        return quizMistakes.value === 0
+          ? '¡Excelente! Frase completada sin errores'
+          : `¡Frase completada! (${quizMistakes.value} ${quizMistakes.value === 1 ? 'error' : 'errores'})`
+      }
+      if (isPhraseMode.value && hasNext.value) {
+        return quizMistakes.value === 0
+          ? '¡Perfecto! Pulsa «Siguiente» para continuar'
+          : `¡Completado! (${quizMistakes.value} ${quizMistakes.value === 1 ? 'error' : 'errores'}) · Pulsa «Siguiente»`
+      }
       return quizMistakes.value === 0
         ? '¡Perfecto! Carácter completado sin errores'
         : `¡Completado! (${quizMistakes.value} ${quizMistakes.value === 1 ? 'error' : 'errores'})`
@@ -203,6 +256,20 @@ function extractHanziAtPoint(x: number, y: number): string | null {
   return bestChar
 }
 
+function scrollActivePillIntoView(behavior: ScrollBehavior = 'smooth') {
+  const track = phraseTrackRef.value
+  if (!track) return
+  const activeEl = track.querySelector<HTMLElement>('[data-active="true"]')
+  if (!activeEl) return
+
+  const targetLeft =
+    activeEl.offsetLeft - track.clientWidth / 2 + activeEl.offsetWidth / 2
+  track.scrollTo({
+    left: Math.max(0, targetLeft),
+    behavior
+  })
+}
+
 function destroyWriter() {
   initSessionId++
   if (writerInstance) {
@@ -220,125 +287,32 @@ function destroyWriter() {
   }
 }
 
-async function initWriter(char: string) {
-  destroyWriter()
-  const currentSession = initSessionId
-
-  isLoading.value = true
-  loadError.value = false
-  totalStrokes.value = 0
-  currentStroke.value = 0
-  quizMistakes.value = 0
-  quizCompleted.value = false
-  feedbackMessage.value = ''
-  mode.value = 'animate'
-
-  await nextTick()
-  const container = writerContainerRef.value
-  if (!container || !isOpen.value) return
-
-  try {
-    if (!HanziWriterClass) {
-      const mod = await import('hanzi-writer')
-      HanziWriterClass = mod.default
+function preloadUpcomingChars() {
+  if (!HanziWriterClass || !isPhraseMode.value) return
+  for (let offset = 1; offset <= 2; offset++) {
+    const nextCh = hanziChars.value[activeIndex.value + offset]
+    if (nextCh) {
+      HanziWriterClass.loadCharacterData(nextCh).catch(() => {})
     }
-
-    if (currentSession !== initSessionId || !isOpen.value || !writerContainerRef.value) {
-      return
-    }
-
-    const colors = themePalette.value
-
-    writerInstance = HanziWriterClass.create(writerContainerRef.value, char, {
-      width: 240,
-      height: 240,
-      padding: 16,
-      showOutline: true,
-      showCharacter: true,
-      strokeAnimationSpeed: 1,
-      delayBetweenStrokes: 220,
-      strokeFadeDuration: 300,
-      drawingWidth: 18,
-      leniency: 1.1,
-      showHintAfterMisses: 3,
-      highlightOnComplete: true,
-      strokeColor: colors.strokeColor,
-      radicalColor: colors.radicalColor,
-      outlineColor: colors.outlineColor,
-      drawingColor: colors.drawingColor,
-      highlightColor: colors.highlightColor,
-      highlightCompleteColor: colors.highlightCompleteColor,
-      onLoadCharDataSuccess(data) {
-        if (currentSession !== initSessionId) return
-        isLoading.value = false
-        loadError.value = false
-        totalStrokes.value = data.strokes.length
-        writerInstance?.animateCharacter()
-      },
-      onLoadCharDataError() {
-        if (currentSession !== initSessionId) return
-        isLoading.value = false
-        loadError.value = true
-      }
-    })
-  } catch {
-    if (currentSession !== initSessionId) return
-    isLoading.value = false
-    loadError.value = true
   }
 }
 
-async function openModal(char: string) {
-  if (!HANZI_REGEX.test(char)) return
-
-  previousActiveElement =
-    document.activeElement instanceof HTMLElement ? document.activeElement : null
-
-  activeChar.value = char
-  isOpen.value = true
-  document.documentElement.style.overflow = 'hidden'
-
-  await nextTick()
-  closeBtnRef.value?.focus({ preventScroll: true })
-  await initWriter(char)
-}
-
-function closeModal() {
-  if (!isOpen.value) return
-  isOpen.value = false
-  document.documentElement.style.overflow = ''
-  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    window.speechSynthesis.cancel()
-  }
-  destroyWriter()
-  if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
-    previousActiveElement.focus({ preventScroll: true })
-    previousActiveElement = null
-  }
-}
-
-function handleAnimate() {
-  if (!writerInstance || isLoading.value || loadError.value) return
-  mode.value = 'animate'
-  quizCompleted.value = false
-  feedbackMessage.value = ''
-  writerInstance.cancelQuiz()
-  writerInstance.showOutline()
-  writerInstance.animateCharacter()
-}
-
-function handleQuiz() {
-  if (!writerInstance || isLoading.value || loadError.value) return
+function runQuizOnWriter(fromCleanHiddenInit: boolean) {
+  if (!writerInstance) return
   mode.value = 'quiz'
   currentStroke.value = 0
   quizMistakes.value = 0
   quizCompleted.value = false
   feedbackMessage.value = ''
 
-  writerInstance.hideOutline()
-  writerInstance.hideCharacter({ duration: 150 })
+  if (!fromCleanHiddenInit) {
+    writerInstance.hideOutline()
+    writerInstance.hideCharacter({ duration: 150 })
+  }
+
+  const capturedIndex = activeIndex.value
+
   writerInstance.quiz({
-    showOutline: false,
     leniency: 1.1,
     showHintAfterMisses: 3,
     highlightOnComplete: true,
@@ -357,6 +331,11 @@ function handleQuiz() {
       quizMistakes.value = summary.totalMistakes
       quizCompleted.value = true
       feedbackMessage.value = ''
+
+      const updated = new Set(completedIndices.value)
+      updated.add(capturedIndex)
+      completedIndices.value = updated
+
       if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
         try {
           navigator.vibrate(25)
@@ -368,9 +347,144 @@ function handleQuiz() {
   })
 }
 
-function handleSpeak() {
+async function initWriter(char: string, targetMode: StrokeModalMode = 'animate') {
+  destroyWriter()
+  if (!char) return
+  const currentSession = initSessionId
+
+  isLoading.value = true
+  loadError.value = false
+  totalStrokes.value = 0
+  currentStroke.value = 0
+  quizMistakes.value = 0
+  quizCompleted.value = false
+  feedbackMessage.value = ''
+  mode.value = targetMode
+
+  await nextTick()
+  const container = writerContainerRef.value
+  if (!container || !isOpen.value) return
+
+  try {
+    if (!HanziWriterClass) {
+      const mod = await import('hanzi-writer')
+      HanziWriterClass = mod.default
+    }
+
+    if (currentSession !== initSessionId || !isOpen.value || !writerContainerRef.value) {
+      return
+    }
+
+    const colors = themePalette.value
+    const startAsQuiz = targetMode === 'quiz'
+
+    writerInstance = HanziWriterClass.create(writerContainerRef.value, char, {
+      width: 240,
+      height: 240,
+      padding: 16,
+      showOutline: !startAsQuiz,
+      showCharacter: !startAsQuiz,
+      strokeAnimationSpeed: 1,
+      delayBetweenStrokes: 220,
+      strokeFadeDuration: 300,
+      drawingWidth: 18,
+      leniency: 1.1,
+      showHintAfterMisses: 3,
+      highlightOnComplete: true,
+      strokeColor: colors.strokeColor,
+      radicalColor: colors.radicalColor,
+      outlineColor: colors.outlineColor,
+      drawingColor: colors.drawingColor,
+      highlightColor: colors.highlightColor,
+      highlightCompleteColor: colors.highlightCompleteColor,
+      onLoadCharDataSuccess(data) {
+        if (currentSession !== initSessionId) return
+        isLoading.value = false
+        loadError.value = false
+        totalStrokes.value = data.strokes.length
+        preloadUpcomingChars()
+
+        if (mode.value === 'quiz') {
+          runQuizOnWriter(startAsQuiz)
+        } else {
+          writerInstance?.animateCharacter()
+        }
+      },
+      onLoadCharDataError() {
+        if (currentSession !== initSessionId) return
+        isLoading.value = false
+        loadError.value = true
+      }
+    })
+  } catch {
+    if (currentSession !== initSessionId) return
+    isLoading.value = false
+    loadError.value = true
+  }
+}
+
+function closeModal() {
+  if (!isOpen.value) return
+  closeStrokeModal()
+  document.documentElement.style.overflow = ''
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel()
+  }
+  destroyWriter()
+  if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+    previousActiveElement.focus({ preventScroll: true })
+    previousActiveElement = null
+  }
+}
+
+async function goToChar(index: number) {
+  if (index < 0 || index >= hanziChars.value.length || index === activeIndex.value) {
+    return
+  }
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    window.speechSynthesis.cancel()
+  }
+  activeIndex.value = index
+  await nextTick()
+  scrollActivePillIntoView('smooth')
+  await initWriter(activeChar.value, mode.value)
+}
+
+function prevChar() {
+  if (hasPrev.value) {
+    goToChar(activeIndex.value - 1)
+  }
+}
+
+function nextChar() {
+  if (hasNext.value) {
+    goToChar(activeIndex.value + 1)
+  }
+}
+
+function handleAnimate() {
+  if (!writerInstance || isLoading.value || loadError.value) return
+  mode.value = 'animate'
+  quizCompleted.value = false
+  feedbackMessage.value = ''
+  writerInstance.cancelQuiz()
+  writerInstance.showOutline()
+  writerInstance.animateCharacter()
+}
+
+function handleQuiz() {
+  if (!writerInstance || isLoading.value || loadError.value) return
+  runQuizOnWriter(false)
+}
+
+function handleSpeakChar() {
   if (!activeChar.value) return
-  speak(activeChar.value, 0.85, 1.0)
+  speakChar(activeChar.value, 0.85, 1.0)
+}
+
+function handleSpeakPhrase() {
+  if (!rawPhrase.value) return
+  speakPhrase(rawPhrase.value, 0.9, 1.0)
 }
 
 function onTouchStart(event: TouchEvent) {
@@ -403,7 +517,7 @@ function onTouchStart(event: TouchEvent) {
       }
     }
 
-    openModal(char)
+    openStrokeModal(char, { initialMode: 'animate' })
   }, LONG_PRESS_MS)
 }
 
@@ -458,17 +572,49 @@ function onMouseUp(event: MouseEvent) {
     const selectedText = selection.toString().trim()
     if (Array.from(selectedText).length === 1 && HANZI_REGEX.test(selectedText)) {
       selection.removeAllRanges()
-      openModal(selectedText)
+      openStrokeModal(selectedText, { initialMode: 'animate' })
     }
   }, 15)
 }
 
 function onKeyDown(event: KeyboardEvent) {
-  if (event.key === 'Escape' && isOpen.value) {
+  if (!isOpen.value) return
+
+  if (event.key === 'Escape') {
     event.preventDefault()
     closeModal()
+    return
+  }
+
+  if (isPhraseMode.value && event.key === 'ArrowLeft' && hasPrev.value) {
+    event.preventDefault()
+    prevChar()
+    return
+  }
+
+  if (isPhraseMode.value && event.key === 'ArrowRight' && hasNext.value) {
+    event.preventDefault()
+    nextChar()
   }
 }
+
+watch(openSession, async () => {
+  if (!isClient.value || !isOpen.value) return
+
+  if (!previousActiveElement) {
+    previousActiveElement =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null
+  }
+
+  completedIndices.value = new Set()
+  mode.value = initialMode.value
+  document.documentElement.style.overflow = 'hidden'
+
+  await nextTick()
+  closeBtnRef.value?.focus({ preventScroll: true })
+  scrollActivePillIntoView('auto')
+  await initWriter(activeChar.value, initialMode.value)
+})
 
 watch(isDark, () => {
   if (!writerInstance || !isOpen.value || loadError.value) return
@@ -521,161 +667,329 @@ onBeforeUnmount(() => {
 <template>
   <ClientOnly>
     <Teleport v-if="isClient" to="body">
-    <Transition name="vp-stroke-fade">
-      <div
-        v-if="isOpen"
-        class="vp-stroke-backdrop"
-        role="dialog"
-        aria-modal="true"
-        :aria-label="`Orden de trazos y práctica del carácter ${activeChar}`"
-        @click.self="closeModal"
-      >
-        <div class="vp-stroke-modal">
-          <div class="vp-stroke-header">
-            <div class="vp-stroke-title-group">
-              <span class="vp-stroke-char-preview" lang="zh-CN">{{ activeChar }}</span>
-              <div class="vp-stroke-meta">
-                <span class="vp-stroke-heading">Trazos y escritura</span>
-                <span class="vp-stroke-status" aria-live="polite">{{ statusText }}</span>
+      <Transition name="vp-stroke-fade">
+        <div
+          v-if="isOpen"
+          class="vp-stroke-backdrop"
+          role="dialog"
+          aria-modal="true"
+          :aria-label="`Orden de trazos y práctica del carácter ${activeChar}`"
+          @click.self="closeModal"
+        >
+          <div class="vp-stroke-modal" :class="{ 'is-phrase': isPhraseMode }">
+            <div class="vp-stroke-header">
+              <div class="vp-stroke-title-group">
+                <span class="vp-stroke-char-preview" lang="zh-CN">{{ activeChar }}</span>
+                <div class="vp-stroke-meta">
+                  <span class="vp-stroke-heading">{{ headingText }}</span>
+                  <span class="vp-stroke-status" aria-live="polite">{{ statusText }}</span>
+                </div>
               </div>
-            </div>
 
-            <button
-              ref="closeBtnRef"
-              type="button"
-              class="vp-stroke-close"
-              title="Cerrar (Esc)"
-              aria-label="Cerrar ventana de trazos"
-              @click="closeModal"
-            >
-              ✕
-            </button>
-          </div>
-
-          <div class="vp-stroke-canvas-wrap">
-            <div
-              class="vp-stroke-grid"
-              :class="{ 'is-quiz': mode === 'quiz' && !loadError }"
-            >
-              <!-- Cuadrícula tradicional Mǐzìgé (米字格) -->
-              <svg
-                class="vp-stroke-grid-svg"
-                viewBox="0 0 240 240"
-                aria-hidden="true"
+              <button
+                ref="closeBtnRef"
+                type="button"
+                class="vp-stroke-close"
+                title="Cerrar (Esc)"
+                aria-label="Cerrar ventana de trazos"
+                @click="closeModal"
               >
-                <rect
-                  x="1"
-                  y="1"
-                  width="238"
-                  height="238"
-                  rx="8"
+                <svg
+                  class="vp-stroke-icon"
+                  viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                />
-                <line
-                  x1="120"
-                  y1="2"
-                  x2="120"
-                  y2="238"
-                  stroke="currentColor"
-                  stroke-width="1"
-                  stroke-dasharray="5 5"
-                  opacity="0.55"
-                />
-                <line
-                  x1="2"
-                  y1="120"
-                  x2="238"
-                  y2="120"
-                  stroke="currentColor"
-                  stroke-width="1"
-                  stroke-dasharray="5 5"
-                  opacity="0.55"
-                />
-                <line
-                  x1="4"
-                  y1="4"
-                  x2="236"
-                  y2="236"
-                  stroke="currentColor"
-                  stroke-width="1"
-                  stroke-dasharray="4 6"
-                  opacity="0.35"
-                />
-                <line
-                  x1="236"
-                  y1="4"
-                  x2="4"
-                  y2="236"
-                  stroke="currentColor"
-                  stroke-width="1"
-                  stroke-dasharray="4 6"
-                  opacity="0.35"
-                />
-              </svg>
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
 
-              <!-- Lienzo interactivo de HanziWriter -->
+            <!-- Tira de caracteres de la palabra o frase -->
+            <div v-if="isPhraseMode" class="vp-stroke-phrase-bar">
               <div
-                ref="writerContainerRef"
-                class="vp-stroke-writer"
-                :class="{ 'is-hidden': loadError }"
-              />
+                ref="phraseTrackRef"
+                class="vp-stroke-phrase-track"
+                role="tablist"
+                aria-label="Caracteres de la frase"
+              >
+                <template v-for="(token, idx) in phraseTokens" :key="idx">
+                  <button
+                    v-if="token.type === 'hanzi'"
+                    type="button"
+                    role="tab"
+                    class="vp-stroke-char-pill"
+                    :class="{
+                      'is-current': token.hanziIndex === activeIndex,
+                      'is-completed': completedIndices.has(token.hanziIndex)
+                    }"
+                    :data-active="token.hanziIndex === activeIndex ? 'true' : undefined"
+                    :aria-selected="token.hanziIndex === activeIndex"
+                    :title="`Carácter ${token.hanziIndex + 1} de ${hanziChars.length}: ${token.char}`"
+                    lang="zh-CN"
+                    @click="goToChar(token.hanziIndex)"
+                  >
+                    <span>{{ token.char }}</span>
+                  </button>
+                  <span
+                    v-else
+                    class="vp-stroke-phrase-sep"
+                    aria-hidden="true"
+                  >{{ token.text }}</span>
+                </template>
+              </div>
 
-              <!-- Fallback visual si no hay conexión o datos del carácter -->
-              <div v-if="loadError" class="vp-stroke-fallback" lang="zh-CN">
-                {{ activeChar }}
+              <button
+                v-if="isSpeechSupported"
+                type="button"
+                class="vp-stroke-phrase-audio"
+                :class="{ 'is-speaking': isPhraseSpeaking }"
+                :title="isPhraseSpeaking ? 'Detener audio' : 'Escuchar frase completa'"
+                :aria-label="
+                  isPhraseSpeaking
+                    ? 'Detener pronunciación'
+                    : 'Escuchar pronunciación de la frase completa'
+                "
+                :aria-pressed="isPhraseSpeaking"
+                @click="handleSpeakPhrase"
+              >
+                <svg
+                  class="vp-stroke-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  <path v-if="isPhraseSpeaking" d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="vp-stroke-canvas-wrap">
+              <div
+                class="vp-stroke-grid"
+                :class="{ 'is-quiz': mode === 'quiz' && !loadError }"
+              >
+                <!-- Cuadrícula tradicional Mǐzìgé (米字格) -->
+                <svg
+                  class="vp-stroke-grid-svg"
+                  viewBox="0 0 240 240"
+                  aria-hidden="true"
+                >
+                  <rect
+                    x="1"
+                    y="1"
+                    width="238"
+                    height="238"
+                    rx="8"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <line
+                    x1="120"
+                    y1="2"
+                    x2="120"
+                    y2="238"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-dasharray="5 5"
+                    opacity="0.55"
+                  />
+                  <line
+                    x1="2"
+                    y1="120"
+                    x2="238"
+                    y2="120"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-dasharray="5 5"
+                    opacity="0.55"
+                  />
+                  <line
+                    x1="4"
+                    y1="4"
+                    x2="236"
+                    y2="236"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-dasharray="4 6"
+                    opacity="0.35"
+                  />
+                  <line
+                    x1="236"
+                    y1="4"
+                    x2="4"
+                    y2="236"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    stroke-dasharray="4 6"
+                    opacity="0.35"
+                  />
+                </svg>
+
+                <!-- Lienzo interactivo de HanziWriter -->
+                <div
+                  ref="writerContainerRef"
+                  class="vp-stroke-writer"
+                  :class="{ 'is-hidden': loadError }"
+                />
+
+                <!-- Fallback visual si no hay conexión o datos del carácter -->
+                <div v-if="loadError" class="vp-stroke-fallback" lang="zh-CN">
+                  {{ activeChar }}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="vp-stroke-legend">
-            <span class="vp-stroke-legend-item">
-              <span class="vp-stroke-dot is-radical" aria-hidden="true" />
-              Radical
-            </span>
-            <span class="vp-stroke-legend-item">
-              <span class="vp-stroke-dot is-stroke" aria-hidden="true" />
-              Trazos
-            </span>
-          </div>
+            <div class="vp-stroke-legend">
+              <span class="vp-stroke-legend-item">
+                <span class="vp-stroke-dot is-radical" aria-hidden="true" />
+                Radical
+              </span>
+              <span class="vp-stroke-legend-item">
+                <span class="vp-stroke-dot is-stroke" aria-hidden="true" />
+                Trazos
+              </span>
+            </div>
 
-          <div class="vp-stroke-actions">
-            <button
-              type="button"
-              class="vp-stroke-btn"
-              :class="{ 'is-active': mode === 'animate' && !loadError }"
-              :disabled="isLoading || loadError"
-              @click="handleAnimate"
-            >
-              <span aria-hidden="true">▶</span>
-              <span>Trazos</span>
-            </button>
+            <!-- Paso manual entre caracteres de la palabra o frase -->
+            <div v-if="isPhraseMode" class="vp-stroke-stepper">
+              <button
+                type="button"
+                class="vp-stroke-step-btn"
+                :disabled="!hasPrev"
+                title="Carácter anterior (←)"
+                aria-label="Carácter anterior"
+                @click="prevChar"
+              >
+                <svg
+                  class="vp-stroke-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+                <span>Anterior</span>
+              </button>
 
-            <button
-              type="button"
-              class="vp-stroke-btn"
-              :class="{ 'is-active': mode === 'quiz' && !loadError }"
-              :disabled="isLoading || loadError"
-              @click="handleQuiz"
-            >
-              <span aria-hidden="true">✏</span>
-              <span>Probar</span>
-            </button>
+              <span class="vp-stroke-step-counter" aria-live="polite">
+                {{ activeIndex + 1 }} / {{ hanziChars.length }}
+              </span>
 
-            <button
-              v-if="isSpeechSupported"
-              type="button"
-              class="vp-stroke-btn"
-              :class="{ 'is-speaking': isSpeaking }"
-              @click="handleSpeak"
-            >
-              <span aria-hidden="true">🔊</span>
-              <span>Oír</span>
-            </button>
+              <button
+                type="button"
+                class="vp-stroke-step-btn"
+                :class="{ 'is-ready': quizCompleted && hasNext }"
+                :disabled="!hasNext"
+                title="Siguiente carácter (→)"
+                aria-label="Siguiente carácter"
+                @click="nextChar"
+              >
+                <span>Siguiente</span>
+                <svg
+                  class="vp-stroke-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="vp-stroke-actions">
+              <button
+                type="button"
+                class="vp-stroke-btn"
+                :class="{ 'is-active': mode === 'animate' && !loadError }"
+                :disabled="isLoading || loadError"
+                @click="handleAnimate"
+              >
+                <svg
+                  class="vp-stroke-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polygon points="5 3 19 12 5 21 5 3" />
+                </svg>
+                <span>Trazos</span>
+              </button>
+
+              <button
+                type="button"
+                class="vp-stroke-btn"
+                :class="{ 'is-active': mode === 'quiz' && !loadError }"
+                :disabled="isLoading || loadError"
+                @click="handleQuiz"
+              >
+                <svg
+                  class="vp-stroke-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+                <span>Probar</span>
+              </button>
+
+              <button
+                v-if="isSpeechSupported"
+                type="button"
+                class="vp-stroke-btn"
+                :class="{ 'is-speaking': isCharSpeaking }"
+                :aria-pressed="isCharSpeaking"
+                @click="handleSpeakChar"
+              >
+                <svg
+                  class="vp-stroke-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  <path v-if="isCharSpeaking" d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                </svg>
+                <span>Oír</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
       </Transition>
     </Teleport>
   </ClientOnly>
@@ -698,6 +1012,8 @@ onBeforeUnmount(() => {
 .vp-stroke-modal {
   width: 100%;
   max-width: 340px;
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
   padding: 1.15rem 1.2rem 1.2rem;
   background-color: var(--vp-c-bg-elv, var(--vp-c-bg));
   border: 1px solid var(--vp-c-divider);
@@ -708,12 +1024,16 @@ onBeforeUnmount(() => {
   -webkit-user-select: none;
 }
 
+.vp-stroke-modal.is-phrase {
+  max-width: 368px;
+}
+
 .vp-stroke-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 0.95rem;
+  margin-bottom: 0.85rem;
 }
 
 .vp-stroke-title-group {
@@ -790,6 +1110,143 @@ onBeforeUnmount(() => {
   outline-offset: 2px;
 }
 
+.vp-stroke-phrase-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.45rem;
+  margin-bottom: 0.8rem;
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+}
+
+.vp-stroke-phrase-track {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  padding: 0.1rem 0.05rem;
+}
+
+.vp-stroke-phrase-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.vp-stroke-phrase-track::-webkit-scrollbar-thumb {
+  background-color: var(--vp-c-divider);
+  border-radius: 999px;
+}
+
+.vp-stroke-char-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.9rem;
+  height: 1.9rem;
+  padding: 0 0.3rem;
+  flex-shrink: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--vp-c-text-1);
+  background-color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 7px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    transform 0.1s ease;
+}
+
+.vp-stroke-char-pill:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.vp-stroke-char-pill:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 1px;
+}
+
+.vp-stroke-char-pill.is-completed {
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.55);
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+:global(.dark) .vp-stroke-char-pill.is-completed {
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.5);
+  background-color: rgba(52, 211, 153, 0.12);
+}
+
+.vp-stroke-char-pill.is-current {
+  color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+  border-color: var(--vp-c-brand-1);
+  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--vp-c-brand-1);
+}
+
+.vp-stroke-char-pill.is-current.is-completed::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background-color: #10b981;
+}
+
+.vp-stroke-phrase-sep {
+  flex-shrink: 0;
+  padding: 0 0.08rem;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-3);
+  line-height: 1;
+}
+
+.vp-stroke-phrase-audio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  line-height: 1;
+  color: var(--vp-c-text-2);
+  background-color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 7px;
+  cursor: pointer;
+  transition:
+    color 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease;
+}
+
+.vp-stroke-phrase-audio:hover,
+.vp-stroke-phrase-audio.is-speaking {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+}
+
+.vp-stroke-phrase-audio:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 1px;
+}
+
 .vp-stroke-canvas-wrap {
   display: flex;
   justify-content: center;
@@ -848,7 +1305,7 @@ onBeforeUnmount(() => {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.8rem;
   font-size: 0.76rem;
   color: var(--vp-c-text-2);
 }
@@ -871,6 +1328,79 @@ onBeforeUnmount(() => {
 
 .vp-stroke-dot.is-stroke {
   background-color: var(--vp-c-text-1);
+}
+
+.vp-stroke-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.vp-stroke-step-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  flex: 1;
+  padding: 0.44rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--vp-c-text-1);
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 9px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.1s ease;
+}
+
+.vp-stroke-step-btn:hover:not(:disabled) {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  background-color: var(--vp-c-brand-soft);
+}
+
+.vp-stroke-step-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.vp-stroke-step-btn:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+}
+
+.vp-stroke-step-btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.vp-stroke-step-btn.is-ready:not(:disabled) {
+  color: #fff;
+  background-color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+}
+
+.vp-stroke-step-btn.is-ready:hover:not(:disabled) {
+  opacity: 0.92;
+  color: #fff;
+  background-color: var(--vp-c-brand-1);
+}
+
+.vp-stroke-step-counter {
+  flex-shrink: 0;
+  min-width: 3.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--vp-c-text-2);
 }
 
 .vp-stroke-actions {
@@ -926,6 +1456,12 @@ onBeforeUnmount(() => {
   color: var(--vp-c-brand-1);
   border-color: var(--vp-c-brand-1);
   background-color: var(--vp-c-brand-soft);
+}
+
+.vp-stroke-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
 }
 
 .vp-stroke-fade-enter-active,

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useSpeech } from '../composables/useSpeech'
+import { hasHanzi, openStrokeModal } from '../composables/useStrokeModal'
 
 interface Props {
   hz: string
@@ -8,6 +9,7 @@ interface Props {
   es: string
   speaker?: string
   tts?: string
+  writeText?: string
   rate?: number
   pitch?: number
 }
@@ -15,6 +17,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   speaker: undefined,
   tts: undefined,
+  writeText: undefined,
   rate: 0.9,
   pitch: 1.0
 })
@@ -22,8 +25,15 @@ const props = withDefaults(defineProps<Props>(), {
 const isRevealed = ref(false)
 const { isSupported, isSpeaking, speak } = useSpeech()
 
+const targetWriteText = computed(() => props.writeText ?? props.hz)
+const canWrite = computed(() => hasHanzi(targetWriteText.value))
+
 function handleSpeak() {
   speak(props.tts ?? props.hz, props.rate, props.pitch)
+}
+
+function handleWrite() {
+  openStrokeModal(targetWriteText.value, { initialMode: 'quiz' })
 }
 
 function toggleReveal() {
@@ -36,35 +46,60 @@ function toggleReveal() {
     <div class="vp-sentence-top">
       <span v-if="speaker" class="vp-sentence-speaker">{{ speaker }}:</span>
       <span class="vp-sentence-hz" lang="zh-CN">{{ hz }}</span>
-      <button
-        v-if="isSupported"
-        type="button"
-        class="vp-sentence-audio"
-        :class="{ 'is-speaking': isSpeaking }"
-        :title="isSpeaking ? 'Detener audio' : `Escuchar pronunciación: ${hz}`"
-        :aria-label="
-          isSpeaking
-            ? 'Detener pronunciación'
-            : `Escuchar pronunciación en chino de ${hz}`
-        "
-        :aria-pressed="isSpeaking"
-        @click.stop="handleSpeak"
-      >
-        <svg
-          class="vp-sentence-audio-icon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
+      <span v-if="isSupported || canWrite" class="vp-sentence-actions">
+        <button
+          v-if="isSupported"
+          type="button"
+          class="vp-sentence-audio"
+          :class="{ 'is-speaking': isSpeaking }"
+          :title="isSpeaking ? 'Detener audio' : `Escuchar pronunciación: ${hz}`"
+          :aria-label="
+            isSpeaking
+              ? 'Detener pronunciación'
+              : `Escuchar pronunciación en chino de ${hz}`
+          "
+          :aria-pressed="isSpeaking"
+          @click.stop="handleSpeak"
         >
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-          <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-          <path v-if="isSpeaking" d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-        </svg>
-      </button>
+          <svg
+            class="vp-sentence-audio-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+            <path v-if="isSpeaking" d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+          </svg>
+        </button>
+
+        <button
+          v-if="canWrite"
+          type="button"
+          class="vp-sentence-write"
+          :title="`Practicar escritura: ${targetWriteText}`"
+          :aria-label="`Practicar escritura en chino de ${targetWriteText}`"
+          @click.stop="handleWrite"
+        >
+          <svg
+            class="vp-sentence-write-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+          </svg>
+        </button>
+      </span>
     </div>
 
     <div class="vp-sentence-sub">
@@ -129,12 +164,20 @@ function toggleReveal() {
   letter-spacing: 0.01em;
 }
 
-.vp-sentence-audio {
+.vp-sentence-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  white-space: nowrap;
+}
+
+.vp-sentence-audio,
+.vp-sentence-write {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
-  margin-left: 0.4rem;
   padding: 0.16rem 0.42rem;
   min-width: 1.7rem;
   min-height: 1.45rem;
@@ -152,17 +195,20 @@ function toggleReveal() {
     transform 0.1s ease;
 }
 
-.vp-sentence-audio:hover {
+.vp-sentence-audio:hover,
+.vp-sentence-write:hover {
   color: var(--vp-c-brand-1);
   border-color: var(--vp-c-brand-1);
   background-color: var(--vp-c-brand-soft);
 }
 
-.vp-sentence-audio:active {
+.vp-sentence-audio:active,
+.vp-sentence-write:active {
   transform: scale(0.93);
 }
 
-.vp-sentence-audio:focus-visible {
+.vp-sentence-audio:focus-visible,
+.vp-sentence-write:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
   outline-offset: 2px;
 }
@@ -173,7 +219,8 @@ function toggleReveal() {
   background-color: var(--vp-c-brand-soft);
 }
 
-.vp-sentence-audio-icon {
+.vp-sentence-audio-icon,
+.vp-sentence-write-icon {
   width: 0.92rem;
   height: 0.92rem;
   flex-shrink: 0;
@@ -250,4 +297,3 @@ function toggleReveal() {
   }
 }
 </style>
-
