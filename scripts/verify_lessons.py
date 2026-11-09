@@ -30,9 +30,10 @@ def main() -> int:
             cp = ord(ch)
             if 0x2E80 <= cp <= 0x2FDF or 0xF900 <= cp <= 0xFAFF:
                 errors.append(f"{md.name}: radical no estándar {ch!r} U+{cp:04X}")
-        for sec in REQUIRED:
-            if sec not in text:
-                errors.append(f"{md.name}: falta sección {sec}")
+        if "examen" not in md.name.lower():
+            for sec in REQUIRED:
+                if sec not in text:
+                    errors.append(f"{md.name}: falta sección {sec}")
         for m in re.finditer(r"\*([^*]+)\*", text):
             if re.search(r"[a-zA-ZüÜ][1-5]\b", m.group(1)):
                 errors.append(f"{md.name}: pinyin numérico en *{m.group(1)}*")

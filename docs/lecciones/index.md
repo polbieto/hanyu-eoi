@@ -34,3 +34,7 @@ Selecciona una lección para consultar su vocabulario con pinyin diacrítico, es
 11. [Lección 1.11: Agradecer, Disculparse en Distintos Registros y Cumplidos (“是吗？”)](./134%20142%20JD1_6%20表示感谢%20道歉%20“是吗？”)
 12. [Lección 1.12: ¿Quién es? — Identificar Personas y Contraste 认识 vs. 知道](./138%20Qui%20es)
 13. [Lección 1.13: Presentarse y Presentar a Otros (介绍一下我自己 / 这是…)](./144%20Presentar%20i%20presentar-se)
+14. [Lección 1.14: La Edad (几岁, 多大, 多大年纪), Predicado Nominal y 每天](./174%20L'edat%20表达年龄%20%20每天)
+15. [Lección 1.15: Números de Teléfono y Habitación (你的电话号码是多少？) y Lectura con 幺 (yāo)](./176%20número%20de%20telèfon%20你的电话号码是多少？)
+16. [Lección 1.16: Los Números del 0 al 100 (一百以内的数字表达法)](./178%20del%201%20al%20100%20一百以内的数字表)
+17. [Examen](./199%20Examen)
